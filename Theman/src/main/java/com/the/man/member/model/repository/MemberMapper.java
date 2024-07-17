@@ -7,5 +7,5 @@ import com.the.man.member.model.vo.Member;
 @Mapper
 public interface MemberMapper {
 	
-	Member login (Member member);
+	//Member login (Member member);
 }
