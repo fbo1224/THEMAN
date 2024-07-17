@@ -8,6 +8,9 @@
 <title>더맨더머</title>
 </head>
 <body>
+	
+	<jsp:forward page="WEB-INF/views/home.jsp"/>
+
 
 <jsp:include page ="WEB-INF/views/common/header.jsp" />
 	
