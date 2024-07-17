@@ -177,7 +177,6 @@
 		                <!-- 로그인 전 -->
 		                <div class="header_menubar">
 			                <a href="${path}/login">로그인</a>
-			                <a href="${path}/insertForm">회원가입</a>
 			                <a href="${path}/list.notice">고객센터</a>
 		                </div>
 	                </c:when>
