@@ -9,8 +9,6 @@
 </head>
 <body>
 	
-	HI
-
 <jsp:include page ="WEB-INF/views/common/header.jsp" />
 	
 	<div id="innerOuter">
