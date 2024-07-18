@@ -95,7 +95,7 @@
 </head>
 <body>
 
-	<jsp:include page ="WEB-INF/views/common/header.jsp" />
+	<jsp:include page ="../common/header.jsp" />
 
 	<div id="wrap">
 		<div id="content">
