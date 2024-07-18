@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,34 +97,34 @@
 
 	<jsp:include page ="WEB-INF/views/common/header.jsp" />
 
-		<div id="wrap">
-			<div id="content">
-				<div id="loginword">
-					<span>로그인</span>
-				</div>
-				<div id="login-area" class="content">
-					<form action="${ path }/login" method="post">
-						<div id="content1">
-							<input type="text" name="memId" id="id" class="input" placeholder="아이디" maxlength="12" autofocus required>
-							<input type="password" name="memPwd" id="password" class="input" placeholder="비밀번호" maxlength="15" required>
-						</div>
-
-						<div id="content2" class="content">
-							<br><br>
-							<a href="${ path }/findIdPage">아이디 찾기</a>
-							&nbsp;&nbsp;|&nbsp;&nbsp;
-							<a href="${ path }/findPwdPage">비밀번호 찾기</a>
-						</div>
-
-						<div id="content3">
-							<button type="submit" class="loginBtn">로그인</button>
-						</div>
-
-					</form>
-				
-				</div>
+	<div id="wrap">
+		<div id="content">
+			<div id="loginword">
+				<span>로그인</span>
 			</div>
-		
+			<div id="login-area" class="content">
+				<form action="${ path }/login" method="post">
+					<div id="content1">
+						<input type="text" name="memId" id="id" class="input" placeholder="아이디" maxlength="12" autofocus required>
+						<input type="password" name="memPwd" id="password" class="input" placeholder="비밀번호" maxlength="15" required>
+					</div>
+
+					<div id="content2" class="content">
+						<br><br>
+						<a href="${ path }/findIdPage">아이디 찾기</a>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="${ path }/findPwdPage">비밀번호 찾기</a>
+					</div>
+
+					<div id="content3">
+						<button type="submit" class="loginBtn">로그인</button>
+					</div>
+
+				</form>
+			
+			</div>
 		</div>
+	
+	</div>
 </body>
 </html>
