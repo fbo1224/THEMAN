@@ -214,17 +214,41 @@
             
             <div class="header_menu">
                 <ul class="navi">
-                    <li><a href="${path}/courses">올레길</a></li>
-                    <li><a href="${path}/companion">혼디모영</a></li>
-                    <li><a href="#">프로그램</a>
+                    <li><a href="${path}/courses">홈</a>
+                    	<ul class="submenu"  style="padding-top: 20px;">
+                            <li><a href="${path}/tangerine">감귤 체험</a></li>
+                            <li><a href="${path}/hanlasan">한라산 예약</a></li>
+                            <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="${path}/companion">신발</a>
+                    	<ul class="submenu"  style="padding-top: 20px;">
+                            <li><a href="${path}/tangerine">감귤 체험</a></li>
+                            <li><a href="${path}/hanlasan">한라산 예약</a></li>
+                            <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">상의</a>
                         <ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/tangerine">감귤 체험</a></li>
                             <li><a href="${path}/hanlasan">한라산 예약</a></li>
                             <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
                         </ul>
                     </li>
-                    <li><a href="${path}/event">축제/이벤트</a></li>
-                    <li><a href="${path}/review">리뷰</a></li>
+                    <li><a href="${path}/review">하의</a>
+                    	<ul class="submenu"  style="padding-top: 20px;">
+                            <li><a href="${path}/tangerine">감귤 체험</a></li>
+                            <li><a href="${path}/hanlasan">한라산 예약</a></li>
+                            <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="${path}/event">이벤트</a>
+                    	<ul class="submenu"  style="padding-top: 20px;">
+                            <li><a href="${path}/tangerine">감귤 체험</a></li>
+                            <li><a href="${path}/hanlasan">한라산 예약</a></li>
+                            <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
