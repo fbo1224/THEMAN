@@ -8,10 +8,6 @@
 		
 		/*div{box-shadow: 0 0 0 1px red;}*/
 		
-		#footer {
-
-        }
-        
         #footer > div{
             width: 100%;
         }
