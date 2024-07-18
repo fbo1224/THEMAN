@@ -16,7 +16,7 @@ public class MemberController {
 	// 로그인 페이지 이동
 	@GetMapping("loginPage")
 	public String loginPage() {
-		return "member/login";
+		return "member/loginPage";
 	}
 	
 	
