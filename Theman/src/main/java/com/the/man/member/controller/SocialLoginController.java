@@ -13,7 +13,8 @@ public class SocialLoginController {
 	
 	// Redirect URI
 	@GetMapping("code")
-	public String code() {
+	public String code(String code) {
+		System.out.println(code);
 		return "redirect:kakao";
 	}
 	

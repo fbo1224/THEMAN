@@ -271,7 +271,6 @@
     	
 		$(() => {
 			$('#kakao-login').click(() => {
-				console.log('카카오버튼 클릭');
 				location.href = 'https://kauth.kakao.com/oauth/authorize?client_id=ed41cca16bdbb59e0d8ba7532bf4b74c&redirect_uri=http://localhost:8717/man/code&response_type=code&scope=profile_image,profile_nickname';
 			});
 		});
