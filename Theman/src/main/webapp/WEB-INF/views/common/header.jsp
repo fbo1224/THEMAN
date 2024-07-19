@@ -217,7 +217,7 @@
                     
                     <li><a href="${path}/companion">OUTER</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
-                            <li><a href="${path}/tangerine">패딩</a></li>
+                            <li><a href="${path}/padding">패딩</a></li>
                             <li><a href="${path}/hanlasan">코트</a></li>
                             <li><a href="${path}/aqua">가디건</a></li>
                         </ul>
