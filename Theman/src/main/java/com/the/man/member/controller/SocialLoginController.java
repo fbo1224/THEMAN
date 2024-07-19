@@ -6,15 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SocialLoginController {
 	
-	@GetMapping("login")
-	public String login() {
-		return "member/kakao-login";
-	}/*
-	
 	@GetMapping("kakao")
 	public String kakaoLogin() {
-		return "member/kakao-login";
-	}*/
+		return "redirect:/";
+	}
 	
 	// Redirect URI
 	@GetMapping("code")
