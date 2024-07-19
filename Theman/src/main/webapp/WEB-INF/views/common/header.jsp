@@ -76,8 +76,8 @@
         }
     
         .logo{
+        	height : 130px;
             width: 300px;
-            padding-top: 20px;
         }
     
         .header_menu{
@@ -208,41 +208,42 @@
         <div class="header_mid">
             <div class="header_logo">
             	<a href="${ path }">
-                	<img src="${ path }/resources/image/logo.png" class="logo">
+                	<img src="${ path }/resources/images/logo/logo7.png" class="logo">
                 </a>
             </div>
             
             <div class="header_menu">
                 <ul class="navi">
-                    <li><a href="${path}/courses">홈</a>
+                    
+                    <li><a href="${path}/companion">OUTER</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/tangerine">감귤 체험</a></li>
                             <li><a href="${path}/hanlasan">한라산 예약</a></li>
                             <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
                         </ul>
                     </li>
-                    <li><a href="${path}/companion">신발</a>
-                    	<ul class="submenu"  style="padding-top: 20px;">
-                            <li><a href="${path}/tangerine">감귤 체험</a></li>
-                            <li><a href="${path}/hanlasan">한라산 예약</a></li>
-                            <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">상의</a>
+                    <li><a href="#">TOP</a>
                         <ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/tangerine">감귤 체험</a></li>
                             <li><a href="${path}/hanlasan">한라산 예약</a></li>
                             <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
                         </ul>
                     </li>
-                    <li><a href="${path}/review">하의</a>
+                    <li><a href="${path}/review">PANTS</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/tangerine">감귤 체험</a></li>
                             <li><a href="${path}/hanlasan">한라산 예약</a></li>
                             <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
                         </ul>
                     </li>
-                    <li><a href="${path}/event">이벤트</a>
+                     <li><a href="${path}/review">SHOES</a>
+                    	<ul class="submenu"  style="padding-top: 20px;">
+                            <li><a href="${path}/tangerine">감귤 체험</a></li>
+                            <li><a href="${path}/hanlasan">한라산 예약</a></li>
+                            <li><a href="${path}/aqua">아쿠아플라넷 예약</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="${path}/event">EVENT</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/tangerine">감귤 체험</a></li>
                             <li><a href="${path}/hanlasan">한라산 예약</a></li>
