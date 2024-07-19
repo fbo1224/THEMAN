@@ -35,9 +35,7 @@
             text-align: center;
         }
 
-        #footer_2 > a:hover{
-            color:rgb(70, 149, 151);
-        }
+        
         #wrap{
 			width: 1200px;
             height: 180px;
@@ -51,9 +49,9 @@
 
 		<div id="wrap">
 	        <div id="footer_2">
-	            <a href="#">개인정보보호정책</a> |
-	            <a href="#">이용약관</a> |
-	            <a href="#">청소년보호정책</a> |
+	            <a>개인정보보호정책</a> |
+	            <a>이용약관</a> |
+	            <a>청소년보호정책</a> |
 	            ©2024 TheMan
 	        </div>
 	
