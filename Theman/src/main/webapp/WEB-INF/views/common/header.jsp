@@ -253,7 +253,7 @@
     </div> <!-- header 끝 -->
     
     <script>
-
+		/*
     	$.ajax({
     		url : '${path}/alram',
     		data : {userNo : ${sessionScope.loginUser.userNo} },
@@ -267,7 +267,7 @@
     			}
     		}
     		
-    	});
+    	});*/
     	
     	$(() => {
     		
