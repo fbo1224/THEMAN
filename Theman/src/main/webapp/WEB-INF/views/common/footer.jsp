@@ -49,10 +49,7 @@
 
 		<div id="wrap">
 	        <div id="footer_2">
-	            <a>개인정보보호정책</a> |
-	            <a>이용약관</a> |
-	            <a>청소년보호정책</a> |
-	            ©2024 TheMan
+	            <p>개인정보보호정책 &nbsp;|&nbsp;이용약관 &nbsp;|&nbsp;청소년보호정책 &nbsp;|&nbsp;©2024 TheMan</p>
 	        </div>
 	
 	
