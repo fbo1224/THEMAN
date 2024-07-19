@@ -176,7 +176,7 @@
 	           		<c:when test="${ empty sessionScope.loginUser }">
 		                <!-- 로그인 전 -->
 		                <div class="header_menubar">
-			                <a href="${path}/loginPage"><img src="resources/images/login/kakao_btn.png"></a>
+			                <a id="kakao-login"><img src="resources/images/login/kakao_btn.png" /></a>
 			                <a href="${path}/list.notice">고객센터</a>
 		                </div>
 	                </c:when>
@@ -267,7 +267,15 @@
     			}
     		}
     		
-    	})
+    	});
+    	
+    	$(() => {
+    		
+    		$('#kakao-login').click(() => {
+    			console.log('카카오버튼 클릭');
+	    		location.href = 'https://kauth.kakao.com/oauth/authorize?client_id=ed41cca16bdbb59e0d8ba7532bf4b74c&redirect_uri=http://localhost:8717/the/man/code&response_type=code&scope=profile_image,profile_nickname';
+    		});
+    	});
 
     </script>
     
