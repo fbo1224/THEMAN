@@ -14,6 +14,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
+import com.the.man.member.model.vo.SocialMember;
+
 @Service
 public class KakaoService {
 	// 토큰 가져오기
@@ -61,7 +63,7 @@ public class KakaoService {
 	}
 	
 	// 사용자 정보 받기
-	public void getUserInfo(String accessToken) throws IOException {
+	public SocialMember getUserInfo(String accessToken) throws IOException, ParseException {
 		
 		String userInfoUrl = "https://kapi.kakao.com/v2/user/me";
 		
@@ -79,6 +81,18 @@ public class KakaoService {
 		
 		System.out.println(responseData);
 		
+		JSONObject responseObj = (JSONObject) new JSONParser().parse(responseData); 
+		JSONObject propObj = (JSONObject)responseObj.get("properties");
+		
+		SocialMember sm = new SocialMember();
+		
+		sm.setId(responseObj.get("id").toString());
+		sm.setNickName(propObj.get("nickname").toString());
+		sm.setProfileImage(propObj.get("profile_image").toString());
+		
+		System.out.println(propObj);
+		
+		return sm;
 	}
 	
 	

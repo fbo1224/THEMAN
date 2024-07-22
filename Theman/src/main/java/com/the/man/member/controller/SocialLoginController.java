@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.the.man.member.model.service.KakaoService;
+import com.the.man.member.model.vo.SocialMember;
 
 @Controller
 public class SocialLoginController {
@@ -26,7 +27,9 @@ public class SocialLoginController {
 		
 		String accessToken = kakaoService.getToken(code);
 		
-		kakaoService.getUserInfo(accessToken);
+		SocialMember sm = kakaoService.getUserInfo(accessToken);
+		
+		
 		
 		return "redirect:kakao";
 	}
