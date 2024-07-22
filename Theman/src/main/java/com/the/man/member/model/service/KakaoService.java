@@ -69,9 +69,15 @@ public class KakaoService {
 		
 		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
 		urlConnection.setRequestMethod("GET");
-		urlConnection.setRequestProperty("Authorization", "Bearer" + accessToken);
+		urlConnection.setRequestProperty("Authorization", "Bearer " + accessToken);
 		
-		System.out.println(urlConnection.getResponseCode());
+		// System.out.println(urlConnection.getResponseCode());
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+		
+		String responseData = br.readLine();
+		
+		System.out.println(responseData);
 		
 	}
 	
