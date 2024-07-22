@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kh.local.member.model.repository.MemberMapper">
+<mapper namespace="com.the.man.member.model.repository.MemberMapper">
 	
 	<resultMap type="socialMember" id="socialMemberResultSet">
 		<result property="id" column="SOCIAL_ID"/>
@@ -10,7 +10,7 @@
 		<result property="propfileImage" column="USER_PROFILE" />
 	</resultMap>
 	
-	<select id="socialUser" parameterType="socialMember" resultMap="socialMemberResultSet">
+	<select id="selectUser" parameterType="SocialMember" resultMap="socialMemberResultSet">
 		SELECT
 		       SOCIAL_ID,
 		       USER_NICKNAME,
@@ -20,6 +20,12 @@
 		 WHERE
 		       SOCIAL_ID = #{id};
 	</select>
+	<!-- 
+	<insert id="insertUser" parameterType="member">
+	
+	
+	</insert>
+	 -->
 	
 	
 </mapper>
