@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.json.simple.JSONObject;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class KakaoService {
-	
+	// 토큰 가져오기
 	public String getToken(String code) throws IOException, ParseException{
 		
 		String tokenUrl = "https://kauth.kakao.com/oauth/token";
@@ -58,6 +59,24 @@ public class KakaoService {
 		
 		return accessToken;
 	}
+	
+	// 사용자 정보 받기
+	public void getUserInfo(String accessToken) throws IOException {
+		
+		String userInfoUrl = "https://kapi.kakao.com/v2/user/me";
+		
+		URL url = new URL(userInfoUrl);
+		
+		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+		urlConnection.setRequestMethod("GET");
+		urlConnection.setRequestProperty("Authorization", "Bearer" + accessToken);
+		
+		System.out.println(urlConnection.getResponseCode());
+		
+	}
+	
+	
+	
 	
 	
 	

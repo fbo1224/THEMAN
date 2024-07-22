@@ -24,7 +24,10 @@ public class SocialLoginController {
 	@GetMapping("code")
 	public String code(String code) throws IOException, ParseException {
 		
-		kakaoService.getToken(code);
+		String accessToken = kakaoService.getToken(code);
+		
+		kakaoService.getUserInfo(accessToken);
+		
 		return "redirect:kakao";
 	}
 	
