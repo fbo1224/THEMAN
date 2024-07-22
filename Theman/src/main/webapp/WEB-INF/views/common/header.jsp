@@ -186,7 +186,7 @@
 				        	
 				        	<span id="alram-area" onclick="location.href='${path}/companionInvite?page='"> </span>
 				        	
-					        <label><b style="color:#FF9843">${ sessionScope.loginUser.userName }</b>님 환영합니다!</label> 
+					        <label><b style="color:#FF9843">${ sessionScope.loginUser.id }</b>님 환영합니다!</label> 
 
 					        <c:choose>
 					            <c:when test="${ sessionScope.loginUser.status == 'A' }">

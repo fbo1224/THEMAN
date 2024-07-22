@@ -2,10 +2,12 @@ package com.the.man.member.model.repository;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.the.man.member.model.vo.Member;
+import com.the.man.member.model.vo.SocialMember;
 
 @Mapper
 public interface MemberMapper {
 	
-	//Member login (Member member);
+	SocialMember selectUser(SocialMember loginUser);
+	
+	
 }

@@ -1,1 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kh.local.member.model.repository.MemberMapper">
+	
+	<resultMap type="socialMember" id="socialMemberResultSet">
+		<result property="id" column="SOCIAL_ID"/>
+		<result property="nickName" column="USER_NICKNAME" />
+		<result property="propfileImage" column="USER_PROFILE" />
+	</resultMap>
+	
+	<select id="socialUser" parameterType="socialMember" resultMap="socialMemberResultSet">
+		SELECT
+		       SOCIAL_ID,
+		       USER_NICKNAME,
+		       USER_PROFILE
+		  FROM
+		       TB_USER
+		 WHERE
+		       SOCIAL_ID = #{id};
+	</select>
+	
+	
+</mapper>

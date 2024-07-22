@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.json.simple.JSONObject;
@@ -14,10 +13,14 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
+import com.the.man.member.model.repository.MemberMapper;
 import com.the.man.member.model.vo.SocialMember;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 public class KakaoService {
+	
 	// 토큰 가져오기
 	public String getToken(String code) throws IOException, ParseException{
 		
@@ -79,7 +82,7 @@ public class KakaoService {
 		
 		String responseData = br.readLine();
 		
-		System.out.println(responseData);
+		// System.out.println(responseData);
 		
 		JSONObject responseObj = (JSONObject) new JSONParser().parse(responseData); 
 		JSONObject propObj = (JSONObject)responseObj.get("properties");
@@ -90,7 +93,7 @@ public class KakaoService {
 		sm.setNickName(propObj.get("nickname").toString());
 		sm.setProfileImage(propObj.get("profile_image").toString());
 		
-		System.out.println(propObj);
+		// System.out.println(propObj);
 		
 		return sm;
 	}

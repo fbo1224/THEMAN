@@ -1,5 +1,10 @@
 package com.the.man.member.model.service;
 
-public interface MemberService {
+import com.the.man.member.model.vo.SocialMember;
 
+public interface MemberService {
+	
+	SocialMember selectUser(SocialMember loginUser);
+	
+	
 }
