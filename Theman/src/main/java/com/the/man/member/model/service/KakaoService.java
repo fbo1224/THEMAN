@@ -76,13 +76,9 @@ public class KakaoService {
 		urlConnection.setRequestMethod("GET");
 		urlConnection.setRequestProperty("Authorization", "Bearer " + accessToken);
 		
-		// System.out.println(urlConnection.getResponseCode());
-		
 		BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 		
 		String responseData = br.readLine();
-		
-		// System.out.println(responseData);
 		
 		JSONObject responseObj = (JSONObject) new JSONParser().parse(responseData); 
 		JSONObject propObj = (JSONObject)responseObj.get("properties");

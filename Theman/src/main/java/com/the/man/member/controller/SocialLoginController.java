@@ -38,6 +38,10 @@ public class SocialLoginController {
 		
 		System.out.println("loginUser : " + loginUser);
 		
+		System.out.println(loginUser.getId());
+		System.out.println(loginUser.getNickName());
+		System.out.println(loginUser.getProfileImage());
+		
 		memberService.selectUser(loginUser);
 		
 		if(loginUser != null) {
