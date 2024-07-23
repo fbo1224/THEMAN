@@ -13,11 +13,6 @@ public class MemberController {
 	
 	private final MemberService memberService;
 	
-	// 로그인 페이지 이동
-	@GetMapping("loginPage")
-	public String loginPage() {
-		return "member/loginPage";
-	}
 	
 	
 	

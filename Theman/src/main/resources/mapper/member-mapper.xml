@@ -10,7 +10,7 @@
 		<result property="propfileImage" column="USER_PROFILE" />
 	</resultMap>
 	
-	<select id="selectUser" parameterType="SocialMember" resultMap="socialMemberResultSet">
+	<select id="selectUser" parameterType="socialMember" resultMap="socialMemberResultSet">
 		SELECT
 		       SOCIAL_ID,
 		       USER_NICKNAME,

@@ -10,11 +10,11 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.the.man.member.model.vo.SocialMember" alias="socialMember"/>
+		<typeAlias type="com.the.man.member.model.vo.SocialMember" alias="socialMember" />
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="/mapper/member-mapper.xml"/>
+		<mapper resource="/mapper/member-mapper.xml" />
 	</mappers>
 	
 

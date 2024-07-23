@@ -36,9 +36,9 @@ public class SocialLoginController {
 		
 		SocialMember loginUser = kakaoService.getUserInfo(accessToken);
 		
-		memberService.selectUser(loginUser);
+		System.out.println("loginUser : " + loginUser);
 		
-		System.out.println(loginUser);
+		memberService.selectUser(loginUser);
 		
 		if(loginUser != null) {
 			session.setAttribute("loginUser", loginUser);
