@@ -100,7 +100,7 @@
 	<div class="outer">
 		<br>
 		<div id="title" align="center">
-			<span>회원가입</span>
+			<span>추가정보 입력</span>
 		</div>
 		<form id="enroll-form" method="post" action="${ path }/insert.me">
 			<table align="center" id="table">
