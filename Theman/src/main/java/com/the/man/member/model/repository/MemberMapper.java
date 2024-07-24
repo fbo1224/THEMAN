@@ -11,4 +11,6 @@ public interface MemberMapper {
 	Member selectUser(Member checkUser);
 	
 	int checkEmail(String userEmail);
+	
+	int insertUser(Member member);
 }

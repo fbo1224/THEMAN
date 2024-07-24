@@ -22,6 +22,11 @@ public class MemberServiceImpl implements MemberService {
 	public int checkEmail(String userEmail) {
 		return memberMapper.checkEmail(userEmail);
 	}
+
+	@Override
+	public int insertUser(Member member) {
+		return memberMapper.insertUser(member);
+	}
 	
 	
 }

@@ -8,41 +8,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
 
-
-	#changeBtn, #reset{
-			border: none;
-			background-color: rgb(70, 149, 151);
-			width: 120px;
-			height: 50px;
-			color: white;
-			margin-top: 30px;
-			margin-left: 70px;
-			border-radius: 10px;
-	}
-
-	#changeBtn:hover, #reset:hover, #pwdCheck1:hover{
-		color: black;
-	}
-
-	#pwdCheck1{
-		border: none;
-		background-color: rgb(202, 202, 161);
-		width: 100px;
-		height: 40px;
-		color: white;
-		font-size: 13px;
-		border-radius: 10px;
-	}
-
-	#word{
-		text-align: center; 
-		height: 100px;
-		font-size: 40px;
-		font-weight: bold;
-		margin-top: 10px; 
-		color: rgb(70, 149, 151);
-	}
-
 	input{
 		width: 300px;
 		height: 40px;
@@ -68,7 +33,6 @@
 	#title{
 		color: rgb(70, 149, 151);
 		height: 100px;
-		border-bottom: 1px solid lightgray;
 	}
 
 	#title > span{
@@ -78,7 +42,6 @@
 	}
 		
 	#table{
-		margin-top: 20px;
 		border-collapse: separate;
 		border-spacing : 15px;
 	}
@@ -94,7 +57,7 @@
 			<span>추가정보 입력</span>
 		</div>
 		
-		<form id="enroll-form" method="post" action="${ path }/insert.me">
+		<form id="enroll-form" method="post" action="${ path }/insert.user">
 			<table align="center" id="table">
 			
 				<tr>

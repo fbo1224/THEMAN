@@ -38,12 +38,12 @@
 	
 	</select>
 	
-	<!-- 
 	<insert id="insertUser" parameterType="member">
-	
+		INSERT
+		       TB_USER
+		       
 	
 	</insert>
-	 -->
 	
 	
 </mapper>
