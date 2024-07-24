@@ -10,7 +10,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.the.man.member.model.vo.SocialMember" alias="socialMember" />
+		<typeAlias type="com.the.man.member.model.vo.Member" alias="member" />
 	</typeAliases>
 	
 	<mappers>

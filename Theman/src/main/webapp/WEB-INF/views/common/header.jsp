@@ -168,6 +168,8 @@
         </script>
         <c:remove var="alertMsg" scope="session" />
     </c:if>
+    
+    ${test1 }
 
     <div class="header">
         <div class="header_top">
@@ -185,18 +187,20 @@
 				        <div class="header_menubar">
 				        	
 				        	<span id="alram-area" onclick="location.href='${path}/companionInvite?page='"> </span>
-				        	
-					        <label><b style="color:#FF9843">${ sessionScope.loginUser.id }</b>님 환영합니다!</label> 
-
+				        
+					        <label><b style="color:#FF9843">${ sessionScope.loginUser.userNickname }</b>님 환영합니다!</label> 
+					
 					        <c:choose>
-					            <c:when test="${ sessionScope.loginUser.status == 'A' }">
+					            <c:when test="${ sessionScope.loginUser.userStatus == 'A' }">
 					                <a href="${path}/adminPage">관리자페이지</a>
 					            </c:when>
 					            
-					            <c:when test="${ sessionScope.loginUser.status == 'C' }">
+					            <c:when test="${ sessionScope.loginUser.userStatus == 'C' }">
 					                <a href="${path}/myPage">마이페이지</a>
 					            </c:when>
 					        </c:choose>
+					        
+		         	
 					        <a href="${path}/list.notice">고객센터</a>
 					        <a href="${path}/logout.member">로그아웃</a>
 				        	

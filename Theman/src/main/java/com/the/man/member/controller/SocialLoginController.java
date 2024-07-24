@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.the.man.member.model.service.KakaoService;
 import com.the.man.member.model.service.MemberService;
-import com.the.man.member.model.vo.SocialMember;
+import com.the.man.member.model.vo.Member;
 
 import lombok.RequiredArgsConstructor;
 
@@ -34,23 +34,20 @@ public class SocialLoginController {
 		
 		String accessToken = kakaoService.getToken(code);
 		
-		SocialMember loginUser = kakaoService.getUserInfo(accessToken);
+		Member checkUser = kakaoService.getUserInfo(accessToken);
 		
-		System.out.println("loginUser : " + loginUser);
+		System.out.println("checkUser : " + checkUser);
 		
-		System.out.println(loginUser.getSocialId());
-		System.out.println(loginUser.getUserNickname());
-		System.out.println(loginUser.getUserProfile());
-		
-		memberService.selectUser(loginUser);
+		Member loginUser = memberService.selectUser(checkUser);
 		
 		if(loginUser != null) {
 			session.setAttribute("loginUser", loginUser);
-			mv.setViewName("redirect:kakao");
+			mv.setViewName("main");
 		} else {
-			mv.addObject("alertMsg", "로그인에 실패하였습니다!").setViewName("main");
+			// 추가 정보 받아서 같이 insert하기
+			session.setAttribute("checkUser", checkUser);
+			//mv.setViewName("회원ㄱㅏ입창");
 		}
-		
 		return mv;
 	}
 	

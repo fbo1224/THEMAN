@@ -21,5 +21,6 @@ public class Member {
 	private String userPhone;
 	private String userStatus;
 	private int userCode; //지역코드
+	private String userProfile;
 	
 }

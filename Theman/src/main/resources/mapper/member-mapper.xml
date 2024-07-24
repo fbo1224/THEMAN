@@ -4,13 +4,19 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.the.man.member.model.repository.MemberMapper">
 	
-	<resultMap type="socialMember" id="socialMemberResultSet">
+	<resultMap type="member" id="memberResultSet">
+		<result column="USER_NO" property="userNo" />
 		<result column="SOCIAL_ID" property="socialId" />
+		<result column="USER_NAME" property="userName" />
 		<result column="USER_NICKNAME" property="userNickname" />
+		<result column="USER_EMAIL" property="userEmail" />
+		<result column="USER_PHONE" property="userPhone" />
+		<result column="USER_STATUS" property="userStatus" />
+		<result column="USER_CODE" property="userCode" />
 		<result column="USER_PROFILE" property="userProfile" />
 	</resultMap>
 	
-	<select id="selectUser" parameterType="socialMember" resultMap="socialMemberResultSet">
+	<select id="selectUser" parameterType="member" resultMap="memberResultSet">
 		SELECT
 		       SOCIAL_ID,
 		       USER_NICKNAME,

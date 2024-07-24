@@ -13,10 +13,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
-import com.the.man.member.model.repository.MemberMapper;
-import com.the.man.member.model.vo.SocialMember;
-
-import lombok.RequiredArgsConstructor;
+import com.the.man.member.model.vo.Member;
 
 @Service
 public class KakaoService {
@@ -66,7 +63,7 @@ public class KakaoService {
 	}
 	
 	// 사용자 정보 받기
-	public SocialMember getUserInfo(String accessToken) throws IOException, ParseException {
+	public Member getUserInfo(String accessToken) throws IOException, ParseException {
 		
 		String userInfoUrl = "https://kapi.kakao.com/v2/user/me";
 		
@@ -83,7 +80,7 @@ public class KakaoService {
 		JSONObject responseObj = (JSONObject) new JSONParser().parse(responseData); 
 		JSONObject propObj = (JSONObject)responseObj.get("properties");
 		
-		SocialMember sm = new SocialMember();
+		Member sm = new Member();
 		
 		sm.setSocialId(responseObj.get("id").toString());
 		sm.setUserNickname(propObj.get("nickname").toString());
