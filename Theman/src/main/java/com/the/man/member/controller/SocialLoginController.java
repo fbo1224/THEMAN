@@ -46,7 +46,7 @@ public class SocialLoginController {
 		} else {
 			// 추가 정보 받아서 같이 insert하기
 			session.setAttribute("checkUser", checkUser);
-			//mv.setViewName("회원ㄱㅏ입창");
+			mv.setViewName("memberJoin");
 		}
 		return mv;
 	}
