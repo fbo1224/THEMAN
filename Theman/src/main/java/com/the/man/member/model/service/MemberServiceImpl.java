@@ -17,6 +17,11 @@ public class MemberServiceImpl implements MemberService {
 	public Member selectUser(Member checkUser) {
 		return memberMapper.selectUser(checkUser);
 	}
+
+	@Override
+	public int checkEmail(String userEmail) {
+		return memberMapper.checkEmail(userEmail);
+	}
 	
 	
 }

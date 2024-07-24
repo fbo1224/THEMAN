@@ -10,5 +10,5 @@ public interface MemberMapper {
 	// 사용자 DB에 있는지 체크
 	Member selectUser(Member checkUser);
 	
-	
+	int checkEmail(String userEmail);
 }

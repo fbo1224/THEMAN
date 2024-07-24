@@ -6,6 +6,6 @@ public interface MemberService {
 	
 	Member selectUser(Member checkUser);
 
-	
+	int checkEmail(String userEmail);
 	
 }

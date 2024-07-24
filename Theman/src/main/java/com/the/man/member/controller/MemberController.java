@@ -16,9 +16,14 @@ public class MemberController {
 	@GetMapping("emailCheck.do")
 	public String checkEmail(String userEmail) {
 		
+		if(memberService.checkEmail(userEmail) > 0){
+			System.out.println("이메일 중복");
+			return "NNNNN";
+		} else {
+			System.out.println("이메일 중복안됨");
+			return "NNNNY";
+		}
 		
-		
-		System.out.println(memberService.checkEmail(userEmail));
 		
 		
 	}

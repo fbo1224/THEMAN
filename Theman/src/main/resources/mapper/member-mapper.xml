@@ -26,6 +26,18 @@
 		 WHERE
 		       SOCIAL_ID = #{socialId}
 	</select>
+	
+	<!-- 회원가입 시 이메일 중복확인 -->
+	<select id="checkEmail" parameterType="string">
+		SELECT
+		       COUNT(*)
+		  FROM
+		       TB_USER
+		 WHERE
+		       USER_EMAIL = #{userEmail}
+	
+	</select>
+	
 	<!-- 
 	<insert id="insertUser" parameterType="member">
 	
