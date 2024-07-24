@@ -53,12 +53,6 @@
 		background-position: right;
 	}
 
-	#pwdCheck2{
-            margin: auto;
-            height: 20px;
-			display: none;
-			border-radius: 10px;
-        }
 
 	.input:focus{
 		border-color: rgb(70, 149, 151);
@@ -72,7 +66,6 @@
 	}
 
 	#title{
-		margin-top: 20px; 
 		color: rgb(70, 149, 151);
 		height: 100px;
 		border-bottom: 1px solid lightgray;
@@ -96,15 +89,13 @@
 <body>
 
 	<jsp:include page="../common/header.jsp" />
-	${ checkUser.socialId }
 	<div class="outer">
-		<br>
 		<div id="title" align="center">
 			<span>추가정보 입력</span>
 		</div>
+		
 		<form id="enroll-form" method="post" action="${ path }/insert.me">
 			<table align="center" id="table">
-			
 			
 				<tr>
 					<td>이름</td>
@@ -167,7 +158,7 @@
 
 			<div align="center">
 				<button type="reset" class="btn btn-sm btn-secondary">취소</button>
-				<button type="submit" class="btn btn-sm btn-primary" disabled id="memJoin">회원가입</button>
+				<button type="submit" class="btn btn-sm btn-primary" disabled id="memJoin">입력완료</button>
 			</div>
 
 			<br><br>
@@ -222,7 +213,7 @@
 		</script>
 	</div>
 
-
+	<jsp:include page="../common/footer.jsp" />
 
 
 </body>
