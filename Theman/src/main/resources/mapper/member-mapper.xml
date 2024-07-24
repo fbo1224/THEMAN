@@ -5,9 +5,9 @@
 <mapper namespace="com.the.man.member.model.repository.MemberMapper">
 	
 	<resultMap type="socialMember" id="socialMemberResultSet">
-		<result property="id" column="SOCIAL_ID"/>
-		<result property="nickName" column="USER_NICKNAME" />
-		<result property="propfileImage" column="USER_PROFILE" />
+		<result property="socialId" column="SOCIAL_ID"/>
+		<result property="userNickName" column="USER_NICKNAME" />
+		<result property="userProfileimage" column="USER_PROFILE" />
 	</resultMap>
 	
 	<select id="selectUser" parameterType="socialMember" resultMap="socialMemberResultSet">
@@ -18,7 +18,7 @@
 		  FROM
 		       TB_USER
 		 WHERE
-		       SOCIAL_ID = #{id}
+		       SOCIAL_ID = #{socialId}
 	</select>
 	<!-- 
 	<insert id="insertUser" parameterType="member">

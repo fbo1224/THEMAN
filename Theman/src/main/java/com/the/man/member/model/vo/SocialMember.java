@@ -13,8 +13,8 @@ import lombok.ToString;
 @ToString
 public class SocialMember {
 	
-	private String id;
-	private String nickName;
-	private String profileImage;
+	private String socialId;
+	private String userNickname;
+	private String userProfileimage;
 
 }
