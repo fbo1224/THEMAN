@@ -13,7 +13,15 @@ public class MemberController {
 	
 	private final MemberService memberService;
 	
-	
+	@GetMapping("emailCheck.do")
+	public String checkEmail(String userEmail) {
+		
+		
+		
+		System.out.println(memberService.checkEmail(userEmail));
+		
+		
+	}
 	
 	
 }
