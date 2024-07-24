@@ -15,6 +15,6 @@ public class SocialMember {
 	
 	private String socialId;
 	private String userNickname;
-	private String userProfileimage;
+	private String userProfile;
 
 }

@@ -85,9 +85,9 @@ public class KakaoService {
 		
 		SocialMember sm = new SocialMember();
 		
-		sm.setId(responseObj.get("id").toString());
-		sm.setNickName(propObj.get("nickname").toString());
-		sm.setProfileImage(propObj.get("profile_image").toString());
+		sm.setSocialId(responseObj.get("id").toString());
+		sm.setUserNickname(propObj.get("nickname").toString());
+		sm.setUserProfile(propObj.get("profile_image").toString());
 		
 		// System.out.println(propObj);
 		
