@@ -18,5 +18,13 @@ public class ProductController {
 	public String padding() {
 		return "product/padding";
 	}
+	
+	@GetMapping("productUproad")
+	public String productUproad() {
+		return "product/productUproad";
+	}
+	
+	
+	
 
 }
