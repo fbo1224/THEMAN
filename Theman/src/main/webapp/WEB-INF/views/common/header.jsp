@@ -156,6 +156,11 @@
         #alram-area:hover{
         	cursor : pointer;
         }
+        
+        #kakao-login:hover{
+        	color: #FBCEB1;
+        	cursor:pointer;
+        }
     
     </style>
 </head>
