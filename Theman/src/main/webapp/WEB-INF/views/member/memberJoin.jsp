@@ -83,7 +83,6 @@
 				<tr>
 					<td>상세주소</td>
 					<td><input type="text" id="detailArea" required></td>
-					<td><button class="btn btn-sm btn-primary" type="button" onclick="checkAddress();" required>확인</button></td>
 				</tr>
 				
 				<tr>
@@ -104,15 +103,15 @@
 					    }).open();
 					}
 					
-					function checkAddress(){
-						$('#detailArea').attr('readonly', true);
-						let userAreaValue = $('#area').val() + ' ' + $('#detailArea').val();
-						$('#enroll-form input[name=userArea]').val(userAreaValue);
-					}
 				
 				
 					function emailCheck(){
 						const $userEmail = $('#enroll-form input[name=userEmail]');
+						// 주소 합치기
+						$('#detailArea').attr('readonly', true);
+						let userAreaValue = $('#area').val() + ' ' + $('#detailArea').val();
+						$('#enroll-form input[name=userArea]').val(userAreaValue);
+						
 						$.ajax({ 
 							url : 'emailCheck.do',
 							data : {userEmail : $userEmail.val()},
@@ -138,7 +137,6 @@
 							},
 							error : function(){
 								console.log('AJAX통신실패');
-								console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error)
 							}
 						});
 					}

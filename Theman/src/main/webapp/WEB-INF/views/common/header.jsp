@@ -205,7 +205,7 @@
 					        
 		         	
 					        <a href="${path}/list.notice">고객센터</a>
-					        <a href="${path}/logout.member">로그아웃</a>
+					        <a href="${path}/logout">로그아웃</a>
 				        	
 						</div>
            		 	</c:otherwise>

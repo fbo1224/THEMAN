@@ -50,4 +50,11 @@ public class MemberController {
 		return "member/myPage";
 	}
 	
+	// 로그아웃
+	@GetMapping("logout")
+	public String logOut(HttpSession session) {
+		session.removeAttribute("loginUser");
+		return "main";
+	}
+	
 }

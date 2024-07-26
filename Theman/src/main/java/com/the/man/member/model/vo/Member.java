@@ -20,7 +20,7 @@ public class Member {
 	private String userEmail;
 	private String userPhone;
 	private String userStatus;
-	private int userArea; //지역
+	private String userArea; //지역
 	private String userProfile;
 	
 }
