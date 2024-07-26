@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <style>
 
 	input{
@@ -75,8 +76,14 @@
 
 				<tr>
 					<td>배송지</td>
-					<td><input type="text" name="userArea" required></td>
-					<td><button class="btn btn-sm btn-primary" type="button">주소찾기</button></td>
+					<td><input type="text" name="userArea" readonly required></td>
+					<td><button class="btn btn-sm btn-primary" type="button" onclick="findAddress();">주소찾기</button></td>
+				</tr>
+				
+				<tr>
+					<td>상세주소</td>
+					<td><input type="text" name="userDetailArea" required></td>
+					<td></td>
 				</tr>
 				
 				<tr>
@@ -86,8 +93,19 @@
 				</tr>
 
 				<script>
+					function findAddress(){
+					    new daum.Postcode({
+					        oncomplete: function(data) {
+					            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+					            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+					            $('#enroll-form input[name=userArea]').val('address');
+					            
+					        }
+					    }).open();
+					}
+				
+				
 					function emailCheck(){
-						
 						const $userEmail = $('#enroll-form input[name=userEmail]');
 						$.ajax({ 
 							url : 'emailCheck.do',
