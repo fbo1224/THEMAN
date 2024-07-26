@@ -33,6 +33,8 @@ public class MemberController {
 	@PostMapping("insert.user")
 	public String insertUser(Member member, HttpSession session) {
 		
+		System.out.println("insertMemberInfo : " + member);
+		
 		if(memberService.insertUser(member) > 0) {
 			session.setAttribute("alertMsg", "회원가입 성공");
 			session.setAttribute("loginUser", member);

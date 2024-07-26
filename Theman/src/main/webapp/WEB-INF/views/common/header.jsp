@@ -156,6 +156,11 @@
         #alram-area:hover{
         	cursor : pointer;
         }
+        
+        #kakao-login:hover{
+        	color: #FBCEB1;
+        	cursor:pointer;
+        }
     
     </style>
 </head>
@@ -169,8 +174,6 @@
         <c:remove var="alertMsg" scope="session" />
     </c:if>
     
-    ${test1 }
-
     <div class="header">
         <div class="header_top">
             <div class="header_top_menu">
