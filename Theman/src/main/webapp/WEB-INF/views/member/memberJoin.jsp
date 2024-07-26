@@ -76,13 +76,13 @@
 
 				<tr>
 					<td>배송지</td>
-					<td><input type="text" name="userArea" readonly required></td>
+					<td><input type="text" id="area" readonly required></td>
 					<td><button class="btn btn-sm btn-primary" type="button" onclick="findAddress();">주소찾기</button></td>
 				</tr>
 				
 				<tr>
 					<td>상세주소</td>
-					<td><input type="text" name="userDetailArea" required></td>
+					<td><input type="text" id="detailArea" required></td>
 					<td></td>
 				</tr>
 				
@@ -98,8 +98,8 @@
 					        oncomplete: function(data) {
 					            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
 					            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+					            $('#area').val('address');
 					            $('#enroll-form input[name=userArea]').val('address');
-					            
 					        }
 					    }).open();
 					}
@@ -136,6 +136,8 @@
 							}
 						});
 					}
+					
+					$('')
 				
 				</script>
 				
@@ -144,13 +146,14 @@
 			<br><br>
 
 			<div align="center">
-				<button type="reset" class="btn btn-sm btn-secondary">취소</button>
+				<button type="reset" class="btn btn-sm btn-secondary">재입력</button>
 				<button type="submit" class="btn btn-sm btn-primary" disabled id="memJoin">입력완료</button>
 			</div>
 			
 				<input type="hidden" name="socialId" value="${ checkUser.socialId }">
 				<input type="hidden" name="userNickname" value="${ checkUser.userNickname }">
 				<input type="hidden" name="userProfile" value="${ checkUser.userProfile }">
+				<input type="hidden" name="userArea">
 
 			<br><br>
 		
