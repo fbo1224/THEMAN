@@ -75,8 +75,14 @@
 
 				<tr>
 					<td>이메일</td>
-					<td><input type="email" name="userEmail" placeholder="@포함하여 입력해주세요." required></td>
+					<td><input type="text" name="userEmail" placeholder="@포함하여 입력해주세요." required></td>
 					<td><button class="btn btn-sm btn-primary" type="button" onclick="emailCheck();">중복확인</button></td>
+				</tr>
+				
+				<tr>
+					<td>지역</td>
+					<td><input type="text" name="userArea" placeholder="@포함하여 입력해주세요." required></td>
+					<td><button class="btn btn-sm btn-primary" type="button">주소찾기</button></td>
 				</tr>
 				
 
@@ -98,7 +104,7 @@
 								} else { // 중복 X == 사용 가능
 									
 									if(confirm('사용 가능한 이메일입니다. 사용하시겠습니까?')){
-										$email.attr('readonly', true);
+										$userEmail.attr('readonly', true);
 										
 										// 중복확인 전 막아두었던 submit버튼 활성화
 										$('#enroll-form button[type=submit]').removeAttr('disabled');
@@ -110,6 +116,7 @@
 							},
 							error : function(){
 								console.log('AJAX통신실패');
+								console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error)
 							}
 						});
 					}

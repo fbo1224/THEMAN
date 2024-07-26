@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.the.man.member.model.service.MemberService;
 import com.the.man.member.model.vo.Member;
@@ -18,14 +18,13 @@ public class MemberController {
 	
 	private final MemberService memberService;
 	
+	@ResponseBody
 	@GetMapping("emailCheck.do")
 	public String checkEmail(String userEmail) {
 		
 		if(memberService.checkEmail(userEmail) > 0){
-			System.out.println("이메일 중복");
 			return "NNNNN";
 		} else {
-			System.out.println("이메일 중복안됨");
 			return "NNNNY";
 		}
 	}
@@ -43,6 +42,12 @@ public class MemberController {
 		}
 		
 		return "main";
+	}
+	
+	// 마이페이지 이동
+	@GetMapping("myPage")
+	public String myPage() {
+		return "member/myPage";
 	}
 	
 }
