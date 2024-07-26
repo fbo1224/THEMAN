@@ -83,7 +83,7 @@
 				<tr>
 					<td>상세주소</td>
 					<td><input type="text" id="detailArea" required></td>
-					<td></td>
+					<td><button class="btn btn-sm btn-primary" type="button" onclick="checkAddress();" required>확인</button></td>
 				</tr>
 				
 				<tr>
@@ -98,10 +98,16 @@
 					        oncomplete: function(data) {
 					            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
 					            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
-					            $('#area').val('address');
-					            $('#enroll-form input[name=userArea]').val('address');
+					            $('#area').val(data.address);
+					            $('#enroll-form input[name=userArea]').val(data.address);
 					        }
 					    }).open();
+					}
+					
+					function checkAddress(){
+						$('#detailArea').attr('readonly', true);
+						let userAreaValue = $('#area').val() + ' ' + $('#detailArea').val();
+						$('#enroll-form input[name=userArea]').val(userAreaValue);
 					}
 				
 				
@@ -136,9 +142,6 @@
 							}
 						});
 					}
-					
-					$('')
-				
 				</script>
 				
 			</table>
