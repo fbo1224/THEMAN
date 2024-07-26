@@ -71,6 +71,7 @@
         font-size: 35px;
         font-weight: bold;
         margin-top: 50px;
+        margin-left:50px;
     }
 
     #ct2_4 > button{
@@ -83,7 +84,7 @@
         margin-left: 70px;
         border-radius: 10px;
     }
-    #ct2_4 > button:hover{color: black;}
+    #ct2_4 > button:hover{color: orangered;}
 
     .icon{
         display: flex;
@@ -121,8 +122,6 @@
     }
     #save:hover{background-color: black; color: white;}
     #profile{
-    	width:auto;
-    	height:auto;
     	border-radius:50px;
     }
     
@@ -149,7 +148,7 @@
                     <img src="${ sessionScope.loginUser.userProfile }" id="profile" style="width:200px; height:230px;">
 	            </div>
 	            <div id="ct2_2">
-	                <div id="name">${ sessionScope.loginUser.userName }님</div>
+	                <div id="name">${ sessionScope.loginUser.userNickname }님</div>
 	            </div>
 	            <div id="ct2_3">
 	                <div id="gradeIcon">
