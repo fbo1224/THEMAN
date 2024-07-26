@@ -32,6 +32,7 @@
             width: 1200px;
             padding-top: 20px;
             padding-bottom: 20px;
+            margin-bottom:20px;
         }
     
         .header_top_menu{
@@ -211,7 +212,7 @@
 					        
 		         	
 					        <a href="${path}/list.notice">고객센터</a>
-					        <a href="${path}/logout">로그아웃</a>
+					        <a href="${path}/logout" style="color:orangered;">로그아웃</a>
 				        	
 						</div>
            		 	</c:otherwise>
