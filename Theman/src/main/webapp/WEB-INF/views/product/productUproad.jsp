@@ -10,7 +10,7 @@
 
 		<div class="insert_box">
 		            <form action="${path}/event/insert" method="post" id="myform" enctype="multipart/form-data">
-		            	<input type="hidden" name="userNo" value="${ sessionScope.loginUser.userNo }"/>
+		            	<%-- <input type="hidden" name="userNo" value="${ sessionScope.loginUser.userNo }"/>--%>
 		            	
 						<table class="tb_input">
 							<tbody>
