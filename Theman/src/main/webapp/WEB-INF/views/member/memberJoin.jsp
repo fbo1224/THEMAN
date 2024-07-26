@@ -70,7 +70,7 @@
 				<tr>
 					<td>전화번호</td>
 					<td><input type="text" placeholder="-제외하고 입력해주세요." maxlength="11" name="userPhone" required></td>
-					<td id="phoneMent"></td>
+					<td><span id="phoneMent"></span></td>
 				</tr>
 
 				<tr>
@@ -79,23 +79,21 @@
 					<td><button class="btn btn-sm btn-primary" type="button" onclick="emailCheck();">중복확인</button></td>
 				</tr>
 				
-				<input type="hidden" name="socialId" value="${ checkUser.socialId }">
-				<input type="hidden" name="userNickname" value="${ checkUser.userNickname }">
-				<input type="hidden" name="userProfile" value="${ checkUser.userProfile }">
+
 
 				<script>
 					function emailCheck(){
 						
-						const $email = $('#enroll-form input[name=email]');
+						const $userEmail = $('#enroll-form input[name=userEmail]');
 						$.ajax({ 
 							url : 'emailCheck.do',
-							data : {userEmail : $email.val()},
+							data : {userEmail : $userEmail.val()},
 							success : function(result){
 								
 								if(result =='NNNNN'){ // 중복된 닉네임
 									alert('중복되는 이메일입니다.');
 								
-									$email.val('').focus();
+									$userEmail.val('').focus();
 								
 								} else { // 중복 X == 사용 가능
 									
@@ -106,7 +104,7 @@
 										$('#enroll-form button[type=submit]').removeAttr('disabled');
 									}
 									else{
-										$email.focus();
+										$userEmail.focus();
 									}
 								}
 							},
@@ -126,6 +124,10 @@
 				<button type="reset" class="btn btn-sm btn-secondary">취소</button>
 				<button type="submit" class="btn btn-sm btn-primary" disabled id="memJoin">입력완료</button>
 			</div>
+			
+				<input type="hidden" name="socialId" value="${ checkUser.socialId }">
+				<input type="hidden" name="userNickname" value="${ checkUser.userNickname }">
+				<input type="hidden" name="userProfile" value="${ checkUser.userProfile }">
 
 			<br><br>
 		
@@ -135,41 +137,44 @@
 		<script>
 			
 			/* 이름 */
-			$('input[name=memName]').blur(function(){
+			$('input[name=userName]').blur(function(){
 					const memNameReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|]{2,15}$/;
-					const memNameVal = $('input[name=memName]').val();
+					const memNameVal = $('input[name=userName]').val();
 
 					if(!memNameReg.test(memNameVal)){
-						$('input[name=memName]').val('');
-						$('input[name=memName]').css('border-color','orangered');
+						$('input[name=userName]').val('');
+						$('input[name=userName]').css('border-color','orangered');
 					}
 					else{
-						$('input[name=memName]').css('border-color','rgb(230, 230, 230)');
+						$('input[name=userName]').css('border-color','rgb(230, 230, 230)');
+						$('input[name=userName]').attr('readonly', true);
 					}
 				});
 			
 			/* 전화번호 */
-			$('input[name=memPhone]').blur(function(){
+			$('input[name=userPhone]').blur(function(){
 				const phoneReg = /^01([0|1|])-?([0-9]{4})-?([0-9]{4})$/;
-				const phoneVal = $('input[name=memPhone]').val();
+				const phoneVal = $('input[name=userPhone]').val();
 
 				if(!phoneReg.test(phoneVal)){
-					$('input[name=memPhone]').val('');
-					$('input[name=memPhone]').css('border-color','orangered');
+					$('input[name=userPhone]').val('');
+					$('input[name=userPhone]').css('border-color','orangered');
 				}
 				else{
-					$('input[name=memPhone]').css('border-color','rgb(230, 230, 230)');
+					$('input[name=userPhone]').css('border-color','rgb(230, 230, 230)');
+					$('input[name=userPhone]').attr('readonly', true);
+					$('#phoneMent').val('적합한 값입니다.').css('color','yellowgreen');
 				}
 			});
 			
 			/* 이메일 */
-			$('input[name=email]').blur(function(){
+			$('input[name=userEmail]').blur(function(){
 				const emailReg = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-				const emailVal = $('input[name=email]').val();
+				const emailVal = $('input[name=userEmail]').val();
 
 				if(!emailReg.test(emailVal)){
-					$('input[name=email]').val('');
-					$('input[name=email]').css('border-color','orangered');
+					$('input[name=userEmail]').val('');
+					$('input[name=userEmail]').css('border-color','orangered');
 				}
 				else{
 					$('input[name=email]').css('border-color','rgb(230, 230, 230)');
