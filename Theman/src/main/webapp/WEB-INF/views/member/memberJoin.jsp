@@ -74,18 +74,16 @@
 				</tr>
 
 				<tr>
+					<td>배송지</td>
+					<td><input type="text" name="userArea" required></td>
+					<td><button class="btn btn-sm btn-primary" type="button">주소찾기</button></td>
+				</tr>
+				
+				<tr>
 					<td>이메일</td>
 					<td><input type="text" name="userEmail" placeholder="@포함하여 입력해주세요." required></td>
 					<td><button class="btn btn-sm btn-primary" type="button" onclick="emailCheck();">중복확인</button></td>
 				</tr>
-				
-				<tr>
-					<td>지역</td>
-					<td><input type="text" name="userArea" placeholder="@포함하여 입력해주세요." required></td>
-					<td><button class="btn btn-sm btn-primary" type="button">주소찾기</button></td>
-				</tr>
-				
-
 
 				<script>
 					function emailCheck(){
