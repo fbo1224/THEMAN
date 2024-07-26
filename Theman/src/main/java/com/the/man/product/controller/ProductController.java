@@ -2,6 +2,7 @@ package com.the.man.product.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -53,7 +54,7 @@ public class ProductController {
 	}
 	
 	
-	
+	/*
 	@PostMapping("/insert")
 	public String insert(@ModelAttribute Product product,
 					     @RequestParam("upfiles1") MultipartFile[] upfiles1,
@@ -103,7 +104,7 @@ public class ProductController {
 			return "common/errorPage";
 		}
 	}
-	
+	*/
 	
 	
 	
