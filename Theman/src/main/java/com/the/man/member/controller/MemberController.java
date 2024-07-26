@@ -49,7 +49,7 @@ public class MemberController {
 	}
 	
 	// 로그아웃
-	@PostMapping("logout")
+	@GetMapping("logout")
 	public String logOut(HttpSession session) {
 		session.removeAttribute("loginUser");
 		return "main";

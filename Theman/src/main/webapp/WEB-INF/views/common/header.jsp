@@ -197,15 +197,15 @@
 				        <div class="header_menubar">
 				        	
 				        	<img src="${ sessionScope.loginUser.userProfile }" id="profile">
-				        
-					        <label><b style="color:#FF9843">${ sessionScope.loginUser.userNickname }</b>님 환영합니다!</label> 
-					
+				        	
+					        <label><b style="color:#FBCEB1;">${ sessionScope.loginUser.userNickname }</b>님 환영합니다!</label> 
+					        
 					        <c:choose>
-					            <c:when test="${ sessionScope.loginUser.userStatus == 'A' }">
+					            <c:when test="${ sessionScope.loginUser.userStatus eq 'A' }">
 					                <a href="${path}/adminPage">관리자페이지</a>
 					            </c:when>
 					            
-					            <c:when test="${ sessionScope.loginUser.userStatus == 'C' }">
+					            <c:when test="${ sessionScope.loginUser.userStatus eq 'C' }">
 					                <a href="${path}/myPage">마이페이지</a>
 					            </c:when>
 					        </c:choose>
