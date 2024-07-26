@@ -11,10 +11,13 @@
 	
 	<typeAliases>
 		<typeAlias type="com.the.man.member.model.vo.Member" alias="member" />
+		<typeAlias type="com.the.man.product.model.vo.Product" alias="product"/>
+		<typeAlias type="com.the.man.product.model.vo.ProductPhoto" alias="ProductPhoto"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="/mapper/member-mapper.xml" />
+		<mapper resource="/mapper/product-mapper.xml" />
 	</mappers>
 	
 

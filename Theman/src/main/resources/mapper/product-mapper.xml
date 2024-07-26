@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.the.man.product.model.repository.ProductMapper">
+	
+	<resultMap type="product" id="productResultSet">
+		<result column="PRODUCT_NO" property="eventNo"/>
+		<result column="PRODUCT_NAME" property="eventTitle"/>
+		<result column="PRODUCT_CONTENT" property="eventContent"/>
+		<result column="CREATE_DATE" property="createDate"/>
+		<result column="PRODUCT_PRICE" property="productPrice"/>
+		<result column="PRODUCT_STATUS" property="ProductStatus"/>
+		<result column="CATEGORY_NO" property="categoryNo"/>
+		
+		
+		<result column="COUNT" property="count"/>
+		<result column="USER_NO" property="userNo"/>
+		
+		<result column="CHANGE_NAME" property="changeName"/>
+	</resultMap>
+	
+	<resultMap type="PRODUCT_PHOTO_NO" id="ProductPhotoResultSet">
+		<result column="PRODUCT_NO" property="productNo"/>
+		<result column="EVENT_NO" property="eventNo"/>
+		<result column="ORIGIN_NAME" property="originName"/>
+		<result column="CHANGE_NAME" property="changeName"/>
+		<result column="FILE_LEVEL" property="fileLevel"/>
+	</resultMap>
+	
+	
+	<insert>
+	
+	</insert>
+	
+	
+	
+	
+	
+	
+</mapper>

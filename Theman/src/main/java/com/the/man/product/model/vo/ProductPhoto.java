@@ -12,9 +12,10 @@ import lombok.ToString;
 public class ProductPhoto{
 
 	private int productPhotoNo;
+	private int productNo;
 	private String originName;
 	private String changeName;
 	private int fileLevel;
-	private int productNo;
+	
 	
 }
