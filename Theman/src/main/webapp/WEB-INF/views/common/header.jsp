@@ -32,6 +32,7 @@
             width: 1200px;
             padding-top: 20px;
             padding-bottom: 20px;
+            margin-bottom:20px;
         }
     
         .header_top_menu{
@@ -161,6 +162,12 @@
         	color: #FBCEB1;
         	cursor:pointer;
         }
+        
+        #profile{
+        	width: 50px;
+        	height: 50px;
+        	border-radius: 50px;
+        }
     
     </style>
 </head>
@@ -189,7 +196,7 @@
 				        <!-- 로그인 후 -->
 				        <div class="header_menubar">
 				        	
-				        	<span id="alram-area" onclick="location.href='${path}/companionInvite?page='"> </span>
+				        	<img src="${ sessionScope.loginUser.userProfile }" id="profile">
 				        
 					        <label><b style="color:#FF9843">${ sessionScope.loginUser.userNickname }</b>님 환영합니다!</label> 
 					
@@ -205,7 +212,7 @@
 					        
 		         	
 					        <a href="${path}/list.notice">고객센터</a>
-					        <a href="${path}/logout.member">로그아웃</a>
+					        <a href="${path}/logout" style="color:orangered;">로그아웃</a>
 				        	
 						</div>
            		 	</c:otherwise>

@@ -36,7 +36,7 @@ public class SocialLoginController {
 		
 		Member checkUser = kakaoService.getUserInfo(accessToken);
 		
-		System.out.println("checkUser : " + checkUser);
+		// System.out.println("checkUser : " + checkUser);
 		
 		Member loginUser = memberService.selectUser(checkUser);
 		

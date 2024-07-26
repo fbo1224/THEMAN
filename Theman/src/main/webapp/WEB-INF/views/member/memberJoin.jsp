@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <style>
 
 	input{
@@ -74,17 +75,43 @@
 				</tr>
 
 				<tr>
-					<td>이메일</td>
-					<td><input type="email" name="userEmail" placeholder="@포함하여 입력해주세요." required></td>
-					<td><button class="btn btn-sm btn-primary" type="button" onclick="emailCheck();">중복확인</button></td>
+					<td>배송지</td>
+					<td><input type="text" id="area" readonly required></td>
+					<td><button class="btn btn-sm btn-primary" type="button" onclick="findAddress();">주소찾기</button></td>
 				</tr>
 				
-
+				<tr>
+					<td>상세주소</td>
+					<td><input type="text" id="detailArea" required></td>
+				</tr>
+				
+				<tr>
+					<td>이메일</td>
+					<td><input type="text" name="userEmail" placeholder="@포함하여 입력해주세요." required></td>
+					<td><button class="btn btn-sm btn-primary" type="button" onclick="emailCheck();">중복확인</button></td>
+				</tr>
 
 				<script>
+					function findAddress(){
+					    new daum.Postcode({
+					        oncomplete: function(data) {
+					            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+					            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+					            $('#area').val(data.address);
+					            $('#enroll-form input[name=userArea]').val(data.address);
+					        }
+					    }).open();
+					}
+					
+				
+				
 					function emailCheck(){
-						
 						const $userEmail = $('#enroll-form input[name=userEmail]');
+						// 주소 합치기
+						$('#detailArea').attr('readonly', true);
+						let userAreaValue = $('#area').val() + ' ' + $('#detailArea').val();
+						$('#enroll-form input[name=userArea]').val(userAreaValue);
+						
 						$.ajax({ 
 							url : 'emailCheck.do',
 							data : {userEmail : $userEmail.val()},
@@ -98,7 +125,7 @@
 								} else { // 중복 X == 사용 가능
 									
 									if(confirm('사용 가능한 이메일입니다. 사용하시겠습니까?')){
-										$email.attr('readonly', true);
+										$userEmail.attr('readonly', true);
 										
 										// 중복확인 전 막아두었던 submit버튼 활성화
 										$('#enroll-form button[type=submit]').removeAttr('disabled');
@@ -113,7 +140,6 @@
 							}
 						});
 					}
-				
 				</script>
 				
 			</table>
@@ -121,13 +147,14 @@
 			<br><br>
 
 			<div align="center">
-				<button type="reset" class="btn btn-sm btn-secondary">취소</button>
+				<button type="reset" class="btn btn-sm btn-secondary">재입력</button>
 				<button type="submit" class="btn btn-sm btn-primary" disabled id="memJoin">입력완료</button>
 			</div>
 			
 				<input type="hidden" name="socialId" value="${ checkUser.socialId }">
 				<input type="hidden" name="userNickname" value="${ checkUser.userNickname }">
 				<input type="hidden" name="userProfile" value="${ checkUser.userProfile }">
+				<input type="hidden" name="userArea">
 
 			<br><br>
 		

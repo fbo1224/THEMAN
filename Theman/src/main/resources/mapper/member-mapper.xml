@@ -40,9 +40,20 @@
 	
 	<insert id="insertUser" parameterType="member">
 		INSERT
+		  INTO
 		       TB_USER
-		       
-	
+		VALUES
+		       (
+		       SEQ_TB_USER.NEXTVAL,
+		       #{socialId},
+		       #{userName},
+		       #{userNickname},
+		       #{userEmail},
+		       #{userPhone},
+		       DEFAULT,
+		       #{userArea},
+		       #{userProfile}
+		       )
 	</insert>
 	
 	
