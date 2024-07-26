@@ -62,28 +62,31 @@
 			
 				<tr>
 					<td>이름</td>
-					<td><input type="text" maxlength="5" required name="memName" id="name" autofocus></td>
+					<td><input type="text" maxlength="5" required name="userName" id="name" autofocus></td>
 					<td></td>
 				</tr>
 				
 				
 				<tr>
 					<td>전화번호</td>
-					<td><input type="text" placeholder="-제외하고 입력해주세요." maxlength="11" name="memPhone" required></td>
+					<td><input type="text" placeholder="-제외하고 입력해주세요." maxlength="11" name="userPhone" required></td>
 					<td id="phoneMent"></td>
 				</tr>
 
 				<tr>
 					<td>이메일</td>
-					<td><input type="email" name="email" placeholder="@포함하여 입력해주세요." required></td>
+					<td><input type="email" name="userEmail" placeholder="@포함하여 입력해주세요." required></td>
 					<td><button class="btn btn-sm btn-primary" type="button" onclick="emailCheck();">중복확인</button></td>
 				</tr>
+				
+				<input type="hidden" name="socialId" value="${ checkUser.socialId }">
+				<input type="hidden" name="userNickname" value="${ checkUser.userNickname }">
+				<input type="hidden" name="userProfile" value="${ checkUser.userProfile }">
 
 				<script>
 					function emailCheck(){
 						
 						const $email = $('#enroll-form input[name=email]');
-						// console.log($nickname);
 						$.ajax({ 
 							url : 'emailCheck.do',
 							data : {userEmail : $email.val()},

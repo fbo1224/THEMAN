@@ -174,8 +174,6 @@
         <c:remove var="alertMsg" scope="session" />
     </c:if>
     
-    ${test1 }
-
     <div class="header">
         <div class="header_top">
             <div class="header_top_menu">
