@@ -31,7 +31,7 @@
 	}
 
 	#title{
-		color: rgb(70, 149, 151);
+		color: #FBCEB1;;
 		height: 100px;
 	}
 
@@ -63,7 +63,7 @@
 				<tr>
 					<td>이름</td>
 					<td><input type="text" maxlength="5" required name="userName" id="name" autofocus></td>
-					<td></td>
+					<td><span id="nameMent"></span></td>
 				</tr>
 				
 				
@@ -148,6 +148,7 @@
 					else{
 						$('input[name=userName]').css('border-color','rgb(230, 230, 230)');
 						$('input[name=userName]').attr('readonly', true);
+						$('#nameMent').html('올바른 입력값입니다. ✓').css('color','yellowgreen');
 					}
 				});
 			
@@ -163,7 +164,7 @@
 				else{
 					$('input[name=userPhone]').css('border-color','rgb(230, 230, 230)');
 					$('input[name=userPhone]').attr('readonly', true);
-					$('#phoneMent').val('적합한 값입니다.').css('color','yellowgreen');
+					$('#phoneMent').html('올바른 입력값입니다. ✓').css('color','yellowgreen');
 				}
 			});
 			
