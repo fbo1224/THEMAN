@@ -17,7 +17,7 @@
 	
 	<mappers>
 		<mapper resource="/mapper/member-mapper.xml" />
-		<mapper resource="/mapper/product-mapper.xml" />
+		<!-- <mapper resource="/mapper/product-mapper.xml" /> -->
 	</mappers>
 	
 
