@@ -54,7 +54,7 @@ public class ProductController {
 	}
 	
 	
-	/*
+	
 	@PostMapping("/insert")
 	public String insert(@ModelAttribute Product product,
 					     @RequestParam("upfiles1") MultipartFile[] upfiles1,
@@ -104,7 +104,7 @@ public class ProductController {
 			return "common/errorPage";
 		}
 	}
-	*/
+	
 	
 	
 	

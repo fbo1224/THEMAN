@@ -1,5 +1,7 @@
 package com.the.man.product.model.vo;
 
+
+
 import java.util.List;
 
 import lombok.AllArgsConstructor;
