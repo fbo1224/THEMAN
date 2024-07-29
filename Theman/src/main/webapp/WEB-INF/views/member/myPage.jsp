@@ -192,10 +192,10 @@
 	        
 	        <div id="content3" class="content">
 	
-	            <div class="icon"><div class="iconImg"><a href="${ path }/mypage.coupon?memNo=${ sessionScope.loginUser.userNo }"><img class="img1" src="./resources/mypage/coupons.png" alt="주문내역"><span>주문내역</span></a></div></div>
-	            <div class="icon"><div class="iconImg"><a href="${ path }/mypage.heart?memNo=${ sessionScope.loginUser.userNo }"><img class="img1" src="./resources/mypage/favorite.png" alt="찜목록"><span>찜목록</span></a></div></div>
-	            <div class="icon"><div class="iconImg"><a href="${ path }/myReview.list?memNo=${ sessionScope.loginUser.userNo }"><div style="width: 80%;margin: auto;"><img class="img1" src="./resources/mypage/review.png" alt="리뷰"></div><span>내 리뷰</span></a></div></div>
-	            <div class="icon"><div class="iconImg"><a href="${ path }/eventList?currentPage=1"><img class="img1" src="./resources/mypage/events.png" alt="결제취소"><span>결제취소</span></a></div></div>
+	            <div class="icon"><div class="iconImg"><a href="${ path }/mypage.coupon?memNo=${ sessionScope.loginUser.userNo }"><img class="img1" src="./resources/images/myPage/order.png" alt="주문내역"><span>주문내역</span></a></div></div>
+	            <div class="icon"><div class="iconImg"><a href="${ path }/mypage.heart?memNo=${ sessionScope.loginUser.userNo }"><img class="img1" src="./resources/images/myPage/heart.png" alt="찜목록"><span>찜목록</span></a></div></div>
+	            <div class="icon"><div class="iconImg"><a href="${ path }/myReview.list?memNo=${ sessionScope.loginUser.userNo }"><div style="width: 80%;margin: auto;"><img class="img1" src="./resources/images/myPage/review.png" alt="리뷰"></div><span>내 리뷰</span></a></div></div>
+	            <div class="icon"><div class="iconImg"><a href="${ path }/eventList?currentPage=1"><img class="img1" src="./resources/images/myPage/cancel.png" alt="결제취소"><span>결제취소</span></a></div></div>
 	        </div>
 
 
