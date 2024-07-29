@@ -145,7 +145,9 @@
 					function emailSend(){
 						const $userEmail = $('#enroll-form input[name=userEmail]');
 						alert('이메일로 전송된 4자리 숫자코드를 입력해주세요');
-						$('#emailArea').html('<input type="number" placeholder="인증번호를 입력해주세요." id="code" required style="width:200px;">');
+						$('#emailArea').html('<input type="number" placeholder="인증번호를 입력해주세요." id="code" required style="width:150px;">'
+						                    + '<button onclick="codeCheck();" class="btn btn-sm btn-black">확인</button>');
+						                    
 						const $emailCode = $('#emailArea').val();
 						
 						$.ajax({

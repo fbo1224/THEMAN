@@ -54,7 +54,7 @@ public class MemberController {
 		
 		MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 		
-		String[] to = {"fubao1224@gmail.com", "chlalswn281@gmail.com"};
+		String to = email;
 		
 		helper.setTo(to);
 		helper.setSubject("THEMAN에서 보낸 인증번호입니다.");
