@@ -168,6 +168,11 @@
         	height: 50px;
         	border-radius: 50px;
         }
+        
+        input:focus{
+        	border-color:#FBCEB1;
+        	outline:none;
+        }
     
     </style>
 </head>

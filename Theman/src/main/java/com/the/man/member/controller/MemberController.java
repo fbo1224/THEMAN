@@ -1,7 +1,18 @@
 package com.the.man.member.controller;
 
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.Random;
+
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +28,7 @@ import lombok.RequiredArgsConstructor;
 public class MemberController {
 	
 	private final MemberService memberService;
+	private final JavaMailSender sender;
 	
 	@ResponseBody
 	@GetMapping("emailCheck.do")
@@ -27,6 +39,30 @@ public class MemberController {
 		} else {
 			return "NNNNY";
 		}
+	}
+	
+	@PostMapping("sendMail")
+	public String sendMail(String email, HttpServletRequest request) throws MessagingException{
+		
+		Random r = new Random();
+		int i = r.nextInt(10000);
+		Format f = new DecimalFormat("0000");
+		String code = f.format(i);
+		
+		// MimeMessage
+		MimeMessage message = sender.createMimeMessage();
+		
+		MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+		
+		String[] to = {"fubao1224@gmail.com", "chlalswn281@gmail.com"};
+		
+		helper.setTo(to);
+		helper.setSubject("THEMAN에서 보낸 인증번호입니다.");
+		helper.setText("인증번호 : " + code);
+		
+		sender.send(message);
+		
+		return code;
 	}
 	
 	@PostMapping("insert.user")
