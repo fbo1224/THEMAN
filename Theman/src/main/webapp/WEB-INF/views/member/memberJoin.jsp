@@ -150,23 +150,26 @@
 						                    
 						const $emailCode = $('#emailArea').val();
 						
-						$.ajax({
-							url:'sendMail',
-							type:'post',
-							data : {email : $userEmail.val()},
-							success : function(code){
-								console.log(code);
-								// 인증번호와 사용자가 입력한 값이 같은지 검사
-								if(code != $emailCode){
-									alert('인증번호가 일치하지 않습니다!');
+						function codeCheck(){
+							$.ajax({
+								url:'sendMail',
+								type:'post',
+								data : {email : $userEmail.val()},
+								success : function(code){
+									console.log(code);
+									// 인증번호와 사용자가 입력한 값이 같은지 검사
+									if(code != $emailCode){
+										alert('인증번호가 일치하지 않습니다!');
+									}
+									else{
+										alert('인증번호가 일치합니다');
+										// 중복확인 전 막아두었던 submit버튼 활성화
+										$('#enroll-form button[type=submit]').removeAttr('disabled');
+									}
 								}
-								else{
-									alert('인증번호가 일치합니다');
-									// 중복확인 전 막아두었던 submit버튼 활성화
-									$('#enroll-form button[type=submit]').removeAttr('disabled');
-								}
-							}
-						})
+							})
+							
+						}
 					}
 					
 				</script>
