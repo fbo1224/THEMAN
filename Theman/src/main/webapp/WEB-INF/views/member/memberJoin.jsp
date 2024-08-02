@@ -90,6 +90,8 @@
 					<td><input type="text" name="userEmail" placeholder="@포함하여 입력해주세요." required></td>
 					<td id="emailArea"></td>
 				</tr>
+				
+				<input type="hidden" id="codeInfo">
 
 				<script>
 					function findAddress(){
@@ -143,33 +145,43 @@
 					}
 					
 					function emailSend(){
-						const $userEmail = $('#enroll-form input[name=userEmail]');
+						let $userEmail = $('#enroll-form input[name=userEmail]');
 						alert('이메일로 전송된 4자리 숫자코드를 입력해주세요');
-						$('#emailArea').html('<input type="number" placeholder="인증번호를 입력해주세요." id="code" required style="width:150px;">'
+						$('#emailArea').html('<input type="number" placeholder="인증번호 입력" id="code" required style="width:150px;">'
 						                    + '<button onclick="codeCheck();" class="btn btn-sm btn-black">확인</button>');
-						                    
-						const $emailCode = $('#emailArea').val();
+						// 메일 보내기               
+						$.ajax({
+							url:'sendMail',
+							type:'post',
+							data : {email : $userEmail.val()},
+							success : function(code){
+								
+								console.log("컨트롤러에서 보내준 코드값 : " + code);
+								
+								$('#codeInfo').val(code);
+								console.log($('#codeInfo').val());
+							}
+						})
 						
-						function codeCheck(){
-							$.ajax({
-								url:'sendMail',
-								type:'post',
-								data : {email : $userEmail.val()},
-								success : function(code){
-									console.log(code);
-									// 인증번호와 사용자가 입력한 값이 같은지 검사
-									if(code != $emailCode){
-										alert('인증번호가 일치하지 않습니다!');
-									}
-									else{
-										alert('인증번호가 일치합니다');
-										// 중복확인 전 막아두었던 submit버튼 활성화
-										$('#enroll-form button[type=submit]').removeAttr('disabled');
-									}
-								}
-							})
-							
+					}
+					
+					function codeCheck(){
+						// hidden input에 넣어서 넘긴 값
+						const $codeInfo = $('codeInfo').val();
+						const $emailCode = $('#code').val();
+						
+						console.log("사용자가 입력한 값 : " + $emailCode);
+						
+						// 인증번호와 사용자가 입력한 값이 같은지 검사
+						if($codeInfo != $emailCode){
+							alert('인증번호가 일치하지 않습니다!');
 						}
+						else{
+							alert('인증번호가 일치합니다');
+							// 중복확인 전 막아두었던 submit버튼 활성화
+							$('#enroll-form button[type=submit]').removeAttr('disabled');
+						}
+						
 					}
 					
 				</script>
