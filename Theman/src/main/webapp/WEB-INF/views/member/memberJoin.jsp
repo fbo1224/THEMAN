@@ -175,6 +175,7 @@
 						// 인증번호와 사용자가 입력한 값이 같은지 검사
 						if($codeInfo != $emailCode){
 							alert('인증번호가 일치하지 않습니다!');
+							emailSend();
 						}
 						else{
 							alert('인증번호가 일치합니다');
