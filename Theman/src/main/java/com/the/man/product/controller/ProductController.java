@@ -106,6 +106,12 @@ public class ProductController {
 //	}
 	
 	
+	@PostMapping
+	public void aa(){
+		
+		Product product = new Product();
+		productService.insert(product);
+	}
 	
 	
 
