@@ -41,7 +41,7 @@ public class ProductController {
 	    String ext = originName.substring(originName.lastIndexOf("."));
 	    String uuid = UUID.randomUUID().toString(); // UUID 생성
 	    String changeName = uuid + ext; // UUID와 파일 확장자를 결합하여 고유한 파일 이름 생성
-	    String savePath = session.getServletContext().getRealPath("/resources/eventFile/");
+	    String savePath = session.getServletContext().getRealPath("/resources/productFile/");
 	    
 	    try {
 	        upfile.transferTo(new File(savePath + changeName));
@@ -50,7 +50,7 @@ public class ProductController {
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
-	    return "resources/eventFile/" + changeName;
+	    return "resources/productFile/" + changeName;
 	}
 	
 	
