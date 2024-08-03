@@ -104,8 +104,6 @@
 					        }
 					    }).open();
 					}
-					
-				
 				
 					function emailCheck(){
 						const $userEmail = $('#enroll-form input[name=userEmail]');

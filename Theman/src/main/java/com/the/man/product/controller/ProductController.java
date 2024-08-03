@@ -55,55 +55,55 @@ public class ProductController {
 	
 	
 	
-	@PostMapping("/insert")
-	public String insert(@ModelAttribute Product product,
-					     @RequestParam("upfiles1") MultipartFile[] upfiles1,
-					     @RequestParam("upfiles2") MultipartFile[] upfiles2,
-					     HttpSession session, Model model) {
-		
-		productService.insert(product);
-		int eventNo = event.getEventNo();
-		
-		if(eventNo > 0) {
-			List<MultipartFile> allFiles = new ArrayList<MultipartFile>();
-			
-			for(MultipartFile file : upfiles1) {
-				if(!file.isEmpty()) {
-					allFiles.add(file);
-				}
-			}
-			
-			for(MultipartFile file : upfiles2) {
-				if(!file.isEmpty()) {
-					allFiles.add(file);
-				}
-			}
-			
-			for(int i = 0; i < allFiles.size(); i++) {
-				MultipartFile upfile = allFiles.get(i);
-				String originName = upfile.getOriginalFilename();
-				String changeName = saveFile(upfile, session);
-				
-				EventImg eventImg = new EventImg();
-				eventImg.setEventNo(eventNo);
-				eventImg.setOriginName(originName);
-				eventImg.setChangeName(changeName);
-				
-				if(i < upfiles1.length) {
-					eventImg.setFileLevel(1);
-				} else {
-					eventImg.setFileLevel(2);
-				}
-				
-				eventService.insertImg(eventImg);
-			}
-			session.setAttribute("alertMsg", "성공");
-			return "redirect:/event";
-		} else {
-			model.addAttribute("errorMsg", "실패");
-			return "common/errorPage";
-		}
-	}
+//	@PostMapping("/insert")
+//	public String insert(@ModelAttribute Product product,
+//					     @RequestParam("upfiles1") MultipartFile[] upfiles1,
+//					     @RequestParam("upfiles2") MultipartFile[] upfiles2,
+//					     HttpSession session, Model model) {
+//		
+//		productService.insert(product);
+//		int eventNo = event.getEventNo();
+//		
+//		if(eventNo > 0) {
+//			List<MultipartFile> allFiles = new ArrayList<MultipartFile>();
+//			
+//			for(MultipartFile file : upfiles1) {
+//				if(!file.isEmpty()) {
+//					allFiles.add(file);
+//				}
+//			}
+//			
+//			for(MultipartFile file : upfiles2) {
+//				if(!file.isEmpty()) {
+//					allFiles.add(file);
+//				}
+//			}
+//			
+//			for(int i = 0; i < allFiles.size(); i++) {
+//				MultipartFile upfile = allFiles.get(i);
+//				String originName = upfile.getOriginalFilename();
+//				String changeName = saveFile(upfile, session);
+//				
+//				EventImg eventImg = new EventImg();
+//				eventImg.setEventNo(eventNo);
+//				eventImg.setOriginName(originName);
+//				eventImg.setChangeName(changeName);
+//				
+//				if(i < upfiles1.length) {
+//					eventImg.setFileLevel(1);
+//				} else {
+//					eventImg.setFileLevel(2);
+//				}
+//				
+//				eventService.insertImg(eventImg);
+//			}
+//			session.setAttribute("alertMsg", "성공");
+//			return "redirect:/event";
+//		} else {
+//			model.addAttribute("errorMsg", "실패");
+//			return "common/errorPage";
+//		}
+//	}
 	
 	
 	

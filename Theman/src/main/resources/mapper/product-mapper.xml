@@ -20,7 +20,7 @@
 		<result column="CHANGE_NAME" property="changeName"/>
 	</resultMap>
 	
-	<resultMap type="PRODUCT_PHOTO_NO" id="ProductPhotoResultSet">
+	<resultMap type="ProductPhoto" id="ProductPhotoResultSet">
 		<result column="PRODUCT_NO" property="productNo"/>
 		<result column="EVENT_NO" property="eventNo"/>
 		<result column="ORIGIN_NAME" property="originName"/>
@@ -28,10 +28,6 @@
 		<result column="FILE_LEVEL" property="fileLevel"/>
 	</resultMap>
 	
-	
-	<insert>
-	
-	</insert>
 	
 	
 	
