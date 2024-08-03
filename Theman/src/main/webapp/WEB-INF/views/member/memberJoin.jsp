@@ -177,9 +177,7 @@
 							// 중복확인 전 막아두었던 submit버튼 활성화
 							$('#enroll-form button[type=submit]').removeAttr('disabled');
 						}
-						
 					}
-					
 				</script>
 				
 			</table>
