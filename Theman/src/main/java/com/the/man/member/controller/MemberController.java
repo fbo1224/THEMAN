@@ -41,6 +41,7 @@ public class MemberController {
 		}
 	}
 	
+	@ResponseBody
 	@PostMapping("sendMail")
 	public String sendMail(String email, HttpServletRequest request) throws MessagingException{
 		

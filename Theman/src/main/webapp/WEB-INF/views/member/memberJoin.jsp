@@ -89,14 +89,14 @@
 					<td>이메일</td>
 					<td><input type="text" name="userEmail" placeholder="@포함하여 입력해주세요." required></td>
 					<td id="emailArea"></td>
+					<input type="hidden" id="codeInfo">
 				</tr>
 				
-				<input type="hidden" id="codeInfo">
 
 				<script>
 					function findAddress(){
 					    new daum.Postcode({
-					        oncomplete: function(data) {
+					        oncomplete: data => {
 					            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
 					            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
 					            $('#area').val(data.address);
@@ -128,17 +128,15 @@
 									
 									if(confirm('사용 가능한 이메일입니다. 사용하시겠습니까?')){
 										$userEmail.attr('readonly', true);
-										
 										// 메일인증
 										$('#emailArea').html('<button class="btn btn-sm btn-danger" type="button" onclick="emailSend();">메일인증</button>')
-										
 									}
 									else{
 										$userEmail.focus();
 									}
 								}
 							},
-							error : function(){
+							error : result => {
 								console.log('AJAX통신실패');
 							}
 						});
@@ -147,32 +145,35 @@
 					function emailSend(){
 						let $userEmail = $('#enroll-form input[name=userEmail]');
 						alert('이메일로 전송된 4자리 숫자코드를 입력해주세요');
-						$('#emailArea').html('<input type="number" placeholder="인증번호 입력" id="code" required style="width:150px;">'
+						$('#emailArea').html('<input type="text" placeholder="인증번호 입력" id="code" required style="width:150px;">'
 						                    + '<button onclick="codeCheck();" class="btn btn-sm btn-black">확인</button>');
-						// 메일 보내기               
+						// 메일 보내기
 						$.ajax({
-							url:'sendMail',
-							type:'post',
+							url : 'sendMail',
+							type : 'post',
 							data : {email : $userEmail.val()},
-							success : function(code){
+							success : result => {
 								
-								console.log("컨트롤러에서 보내준 코드값 : " + code);
+								console.log("컨트롤러에서 보내준 코드값 : " + result);
 								
-								$('#codeInfo').val(code);
-								console.log($('#codeInfo').val());
+								$('#codeInfo').val(result);
+								console.log("codeInfo의값 : " + $('#codeInfo').val());
+							},
+							error : result => {
+								alert('메일 전송 중 오류가 발생했습니다. 다시 시도해 주세요.');
 							}
+							
 						})
-						
 					}
 					
 					function codeCheck(){
 						// hidden input에 넣어서 넘긴 값
-						const $codeInfo = $('codeInfo').val();
+						const $codeInfo = $('#codeInfo').val();
 						const $emailCode = $('#code').val();
 						
 						console.log("사용자가 입력한 값 : " + $emailCode);
 						
-						// 인증번호와 사용자가 입력한 값이 같은지 검사
+						// 인증번호와 사용자가 입력한 값이 같은지 검사 
 						if($codeInfo != $emailCode){
 							alert('인증번호가 일치하지 않습니다!');
 							emailSend();
