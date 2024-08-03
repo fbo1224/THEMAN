@@ -40,7 +40,7 @@ public class SocialLoginController {
 		
 		if(loginUser != null) {
 			session.setAttribute("loginUser", loginUser);
-			mv.setViewName("main");
+			mv.setViewName("redirect:/");
 		} else {
 			// 추가 정보 받아서 같이 insert하기
 			session.setAttribute("checkUser", checkUser);
