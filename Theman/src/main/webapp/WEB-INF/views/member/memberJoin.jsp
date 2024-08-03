@@ -153,11 +153,7 @@
 							type : 'post',
 							data : {email : $userEmail.val()},
 							success : result => {
-								
-								console.log("컨트롤러에서 보내준 코드값 : " + result);
-								
 								$('#codeInfo').val(result);
-								console.log("codeInfo의값 : " + $('#codeInfo').val());
 							},
 							error : result => {
 								alert('메일 전송 중 오류가 발생했습니다. 다시 시도해 주세요.');
@@ -170,8 +166,6 @@
 						// hidden input에 넣어서 넘긴 값
 						const $codeInfo = $('#codeInfo').val();
 						const $emailCode = $('#code').val();
-						
-						console.log("사용자가 입력한 값 : " + $emailCode);
 						
 						// 인증번호와 사용자가 입력한 값이 같은지 검사 
 						if($codeInfo != $emailCode){
