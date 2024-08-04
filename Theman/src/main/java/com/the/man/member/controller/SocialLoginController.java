@@ -23,10 +23,10 @@ public class SocialLoginController {
 	private final KakaoService kakaoService;
 	private final MemberService memberService;
 	
-	@GetMapping("kakao")
-	public String kakaoLogin() {
-		return "redirect:/";
-	}
+//	@GetMapping("kakao")
+//	public String kakaoLogin() {
+//		return "redirect:/";
+//	}
 	
 	// Redirect URI
 	@GetMapping("code")
