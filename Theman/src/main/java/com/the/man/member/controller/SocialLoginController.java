@@ -23,10 +23,10 @@ public class SocialLoginController {
 	private final KakaoService kakaoService;
 	private final MemberService memberService;
 	
-	@GetMapping("kakao")
-	public String kakaoLogin() {
-		return "redirect:/";
-	}
+//	@GetMapping("kakao")
+//	public String kakaoLogin() {
+//		return "redirect:/";
+//	}
 	
 	// Redirect URI
 	@GetMapping("code")
@@ -40,7 +40,7 @@ public class SocialLoginController {
 		
 		if(loginUser != null) {
 			session.setAttribute("loginUser", loginUser);
-			mv.setViewName("main");
+			mv.setViewName("redirect:/");
 		} else {
 			// 추가 정보 받아서 같이 insert하기
 			session.setAttribute("checkUser", checkUser);

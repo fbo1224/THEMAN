@@ -76,7 +76,7 @@ public class MemberController {
 			session.setAttribute("alertMsg", "회원가입에 실패하였습니다. 다시 시도해 주세요!");
 		}
 		
-		return "main";
+		return "redirect:/";
 	}
 	
 	// 마이페이지 이동
@@ -89,7 +89,7 @@ public class MemberController {
 	@GetMapping("logout")
 	public String logOut(HttpSession session) {
 		session.removeAttribute("loginUser");
-		return "main";
+		return "redirect:/";
 	}
 	
 }

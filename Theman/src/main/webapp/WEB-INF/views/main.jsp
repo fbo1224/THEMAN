@@ -66,11 +66,10 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->                	
                 
-                <div class="swiper-slide" onclick="aba();"><img src="${ path }/resources/images/logo/logo4.png"></div>
-                <div class="swiper-slide"><img src="${ path }/resources/images/logo/logo.png"></div>
-                <div class="swiper-slide"><img src="${ path }/resources/images/logo/logo1.png"></div>
-                <div class="swiper-slide"><img src="${ path }/resources/images/logo/logo2.png"></div>
-                <div class="swiper-slide"><img src="${ path }/resources/images/logo/logo3.png"></div>
+                <div class="swiper-slide" onclick="aba();"><img src="${ path }/resources/images/event/event_1.png"></div>
+                <div class="swiper-slide" onclick="aba();"><img src="${ path }/resources/images/event/event_2.png"></div>
+                <div class="swiper-slide" onclick="aba();"><img src="${ path }/resources/images/event/event_3.png"></div>
+                <div class="swiper-slide" onclick="aba();"><img src="${ path }/resources/images/event/event_4.png"></div>
             	
             </div>
         
