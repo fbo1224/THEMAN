@@ -21,12 +21,56 @@
 	</resultMap>
 	
 	<resultMap type="ProductPhoto" id="ProductPhotoResultSet">
+		<result column="PRODUCT_PHOTO_NO" property="productPhotoNo"/>
 		<result column="PRODUCT_NO" property="productNo"/>
-		<result column="EVENT_NO" property="eventNo"/>
 		<result column="ORIGIN_NAME" property="originName"/>
 		<result column="CHANGE_NAME" property="changeName"/>
 		<result column="FILE_LEVEL" property="fileLevel"/>
 	</resultMap>
+	
+	<insert id="insert" parameterType="product">
+		INSERT
+			INTO
+				PRODUCT
+				(
+				PRODUCT_NO,
+				PRODUCT_TITLE,
+				PRODUCT_CONTENT,
+				USER_NO			
+				)
+			VALUES
+				(
+				#{prouctNo},
+				#{productTitle},
+				#{productContent},
+				#{userNo}
+				)
+	
+	</insert>
+	
+	<insert id="insertImg" parameterType="productPhoto">
+		INSERT
+			INTO
+				PRODUCT_PHOTO
+				(
+				PRODUCT_PHOTO_NO,
+				PRODUCT_NO,
+				ORIGIN_NAME,
+				CHANGE_NAME,
+				FILE_LEVEL
+				)
+			VALUES
+				(
+				SEQ_TB_PRODUCT_PHOTO.NEXTVAL,
+				#{productNo},
+				#{originName},
+				#{changeName},
+				#{fileLevel}
+			)
+				
+	
+	</insert>
+	
 	
 	
 	

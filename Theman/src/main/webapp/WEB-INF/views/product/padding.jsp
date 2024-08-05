@@ -28,43 +28,7 @@
 
 	<jsp:include page="../common/footer.jsp" />
 	
-	<script>
-	 $.ajax({ // 메인화면에 인기차량 선택해서 화면에 보여주기
-         url : 'popular.car',
-         success : function(result){
-
-             //console.log(result);
-             let resultStr = '';
-				for(let i = 0; i < result.length; i++){
-					if(i >= 3) break; // 3개만
-					
-					resultStr 
-					  += '<div class="col-xs-12 col-sm-4">'
- 					 + '<div class="card">'
- 					   + '<a class="img-card">'
- 					     + '<div class="card-content car-car">'
- 					       + '<img style="width : 100%; height : 100%" src="' + result[i].carPhotoAddress +'">'
- 					       + '<input type="hidden" name="popularcar" value="' + result[i].modelName + '">'
- 					       + '<input type="hidden" name="popularcar2" value="' + result[i].gradeName + '">'
- 					       + '<input type="hidden" name="popularcar3" value="' + result[i].fuelName + '">'
- 					     + '</div>'
- 					   + '</a>'
- 					   + '<div>'
- 					     + '<h4 calss=cardtitle>'
- 					       + '<a>' + result[i].modelName + '</a>'
- 					     + '</h4>'
- 					   + '</div>'
- 					 +'</div>'
-					+ '</div>'
-				}
-				
-				$('#cacaca').html(resultStr);
-
-         }
-     });
 	
-	</script>
-
 
 </body>
 </html>
