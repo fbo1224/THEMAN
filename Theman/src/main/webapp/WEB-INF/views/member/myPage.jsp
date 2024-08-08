@@ -179,8 +179,8 @@
 				<form action="${path}/delete.me" method="post">
 				
 				<div class="form-group">
-				   	<label for="memPwd" style="font-size:20px; color:orangered">회원탈퇴시 회원혜택을 이용할 수 없습니다.</label><br>
-				   	<input type="password" name="memPwd" class="form-control" placeholder="비밀번호를 입력해주세요." id="deletePwd" required>
+				   	<label for="memPwd" style="font-size:20px; color:orangered">"회원탈퇴"라고 적어주세요.</label><br>
+				   	<input type="password" name="memPwd" class="form-control" placeholder="회원탈퇴" id="deletePwd" required>
 	                <button type="submit" class="btn btn-sm btn-danger" onclick="return deleteMember();" style="float: right;">탈퇴하기</button>
 				</div>
 				 	<input type="hidden" value="${ sessionScope.loginUser.userNo }" name="memNo">
