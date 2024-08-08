@@ -93,8 +93,8 @@ public class MemberController {
 	}
 	
 	// 회원탈퇴
-	@GetMapping("deleteMember")
-	public String deleteMember(HttpSession session, int userNo) {
+	@GetMapping("deleteUser")
+	public String deleteUser(HttpSession session, int userNo) {
 		
 		if(memberService.deleteUser(userNo) > 0) {
 			session.setAttribute("alertMsg", "그동안 더맨더머를 이용해주셔서 감사합니다.");

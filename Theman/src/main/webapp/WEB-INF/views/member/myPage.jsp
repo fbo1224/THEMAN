@@ -176,14 +176,12 @@
 				
 				<!-- Modal body -->
 				<div class="modal-body">
-				<form action="${path}/delete.me" method="post">
+				<form action="${path}/deleteUser" method="get">
 				
 				<div class="form-group">
-				   	<label for="memPwd" style="font-size:20px; color:orangered">"회원탈퇴"라고 적어주세요.</label><br>
+				   	<label style="font-size:20px; color:orangered">"회원탈퇴"라고 적어주세요.</label><br>
 				   	<input type="text" id="delete" class="form-control" placeholder="회원탈퇴" id="deletePwd" required>
-				   	
-	                <button id="deleteBtn" type="submit" class="btn btn-sm btn-danger" onclick="return deleteUser();" style="float: right;" disabled>탈퇴하기</button>
-	                
+	                <button id="deleteBtn" type="submit" class="btn btn-sm btn-danger" style="float: right;" disabled>탈퇴하기</button>
 				</div>
 				 	<input type="hidden" value="${ sessionScope.loginUser.userNo }" name="userNo">
 				</form>
