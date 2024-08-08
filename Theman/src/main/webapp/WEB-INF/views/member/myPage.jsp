@@ -180,8 +180,10 @@
 				
 				<div class="form-group">
 				   	<label for="memPwd" style="font-size:20px; color:orangered">"회원탈퇴"라고 적어주세요.</label><br>
-				   	<input type="password" name="memPwd" class="form-control" placeholder="회원탈퇴" id="deletePwd" required>
-	                <button type="submit" class="btn btn-sm btn-danger" onclick="return deleteMember();" style="float: right;">탈퇴하기</button>
+				   	<input type="text" id="delete" class="form-control" placeholder="회원탈퇴" id="deletePwd" required>
+				   	
+	                <button id="deleteBtn" type="submit" class="btn btn-sm btn-danger" onclick="return deleteMember();" style="float: right;" disabled>탈퇴하기</button>
+	                
 				</div>
 				 	<input type="hidden" value="${ sessionScope.loginUser.userNo }" name="memNo">
 				</form>
@@ -189,6 +191,17 @@
 				</div>
 			</div>
 		</div>
+		
+		<script>
+			$delete = $('#delete').val();
+			
+			(() => {
+				if($delete == '회원탈퇴'){
+					$('#deleteBtn').attr('disabled', false);
+				}
+			})
+		
+		</script>
 	        
 	        <div id="content3" class="content">
 	
