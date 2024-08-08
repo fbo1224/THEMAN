@@ -62,5 +62,14 @@
 		       )
 	</insert>
 	
+	<update id="deleteUser" parameterType="int">
+		UPDATE
+		       TB_USER
+		   SET
+		       USER_STATUS = 'Y'
+	     WHERE
+	           USER_NO = #{userNo}
+	</update>
+	
 	
 </mapper>

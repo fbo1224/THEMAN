@@ -10,4 +10,6 @@ public interface MemberService {
 	
 	int insertUser(Member member);
 	
+	int deleteUser(int userNo);
+	
 }

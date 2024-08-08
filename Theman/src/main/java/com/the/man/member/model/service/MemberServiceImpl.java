@@ -27,6 +27,11 @@ public class MemberServiceImpl implements MemberService {
 	public int insertUser(Member member) {
 		return memberMapper.insertUser(member);
 	}
+
+	@Override
+	public int deleteUser(int userNo) {
+		return memberMapper.deleteUser(userNo);
+	}
 	
 	
 }
