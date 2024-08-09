@@ -20,9 +20,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			response.sendRedirect(request.getContextPath());
 			return false;
 		}
-		
-		
-		
 	}
 
 }
