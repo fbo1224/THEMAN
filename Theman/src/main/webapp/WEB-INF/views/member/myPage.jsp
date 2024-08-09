@@ -159,7 +159,6 @@
 	
 	
 	            <div id="ct2_4">
-	                <button type="button" id="update" onclick="location.href='${path}/update.ck'">정보수정</button>
 	                <button type="button" data-toggle="modal" data-target="#deleteForm">회원탈퇴</button>
 	            </div>
 	        </div>
@@ -176,19 +175,27 @@
 				
 				<!-- Modal body -->
 				<div class="modal-body">
-				<form action="${path}/delete.me" method="post">
+				<form action="${path}/deleteUser" method="get">
 				
 				<div class="form-group">
-				   	<label for="memPwd" style="font-size:20px; color:orangered">회원탈퇴시 회원혜택을 이용할 수 없습니다.</label><br>
-				   	<input type="password" name="memPwd" class="form-control" placeholder="비밀번호를 입력해주세요." id="deletePwd" required>
-	                <button type="submit" class="btn btn-sm btn-danger" onclick="return deleteMember();" style="float: right;">탈퇴하기</button>
+				   	<label style="font-size:20px; color:orangered">"회원탈퇴"라고 적어주세요.</label><br>
+				   	<input type="text" id="delete" class="form-control" placeholder="회원탈퇴" id="deletePwd" required>
+	                <button id="deleteBtn" type="submit" class="btn btn-sm btn-danger" style="float: right;" disabled>탈퇴하기</button>
 				</div>
-				 	<input type="hidden" value="${ sessionScope.loginUser.userNo }" name="memNo">
+				 	<input type="hidden" value="${ sessionScope.loginUser.userNo }" name="userNo">
 				</form>
 			 	</div>
 				</div>
 			</div>
 		</div>
+		
+		<script>
+			$('#delete').keyup(() => {
+				if($('#delete').val() == '회원탈퇴'){
+					$('#deleteBtn').attr('disabled', false);
+				}
+			})
+		</script>
 	        
 	        <div id="content3" class="content">
 	

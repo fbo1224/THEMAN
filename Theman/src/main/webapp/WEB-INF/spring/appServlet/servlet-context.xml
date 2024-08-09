@@ -26,7 +26,6 @@
    <interceptors>
 	 	<interceptor>
 	 		<mapping path="/myPage" />
-	 		
 	 		<beans:bean class="com.the.man.common.interceptor.LoginInterceptor" id="loginInterceptor"/>
 	 	</interceptor>
 	 </interceptors>

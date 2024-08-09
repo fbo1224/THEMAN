@@ -13,4 +13,6 @@ public interface MemberMapper {
 	int checkEmail(String userEmail);
 	
 	int insertUser(Member member);
+	
+	int deleteUser(int userNo);
 }

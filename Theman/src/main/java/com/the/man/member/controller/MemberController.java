@@ -92,4 +92,20 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	// 회원탈퇴
+	@GetMapping("deleteUser")
+	public String deleteUser(HttpSession session, int userNo) {
+		
+		if(memberService.deleteUser(userNo) > 0) {
+			session.setAttribute("alertMsg", "그동안 더맨더머를 이용해주셔서 감사합니다.");
+			session.removeAttribute("loginUser");
+			return "redirect:/";
+		} else {
+			session.setAttribute("alertMsg", "회원탈퇴에 실패하였습니다. 다시 시도해 주세요.");
+			return "member/myPage";
+		}
+		
+	}
+	
+	
 }
