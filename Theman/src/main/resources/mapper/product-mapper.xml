@@ -5,9 +5,9 @@
 <mapper namespace="com.the.man.product.model.repository.ProductMapper">
 	
 	<resultMap type="product" id="productResultSet">
-		<result column="PRODUCT_NO" property="eventNo"/>
-		<result column="PRODUCT_NAME" property="eventTitle"/>
-		<result column="PRODUCT_CONTENT" property="eventContent"/>
+		<result column="PRODUCT_NO" property="productNo"/>
+		<result column="PRODUCT_NAME" property="productName"/>
+		<result column="PRODUCT_CONTENT" property="productContent"/>
 		<result column="CREATE_DATE" property="createDate"/>
 		<result column="PRODUCT_PRICE" property="productPrice"/>
 		<result column="PRODUCT_STATUS" property="ProductStatus"/>
@@ -29,20 +29,27 @@
 	</resultMap>
 	
 	<insert id="insert" parameterType="product">
+		<selectKey keyProperty="productNo" resultType="_int" order="BEFORE">
+	        SELECT SEQ_TB_PRODUCT.NEXTVAL AS productNo FROM dual
+	    </selectKey>
 		INSERT
 			INTO
-				PRODUCT
+				TB_PRODUCT
 				(
 				PRODUCT_NO,
-				PRODUCT_TITLE,
+				PRODUCT_Name,
 				PRODUCT_CONTENT,
+				PRODUCT_PRICE,
+				CATEGORY_NO,
 				USER_NO			
 				)
 			VALUES
 				(
-				#{prouctNo},
-				#{productTitle},
+				#{productNo},
+				#{productName},
 				#{productContent},
+				#{productPrice},
+				#{categoryNo},
 				#{userNo}
 				)
 	
@@ -51,7 +58,7 @@
 	<insert id="insertImg" parameterType="productPhoto">
 		INSERT
 			INTO
-				PRODUCT_PHOTO
+				TB_PRODUCT_PHOTO
 				(
 				PRODUCT_PHOTO_NO,
 				PRODUCT_NO,
@@ -71,10 +78,36 @@
 	
 	</insert>
 	
+	<select id="selectListCount" resultType="_int">
+		SELECT
+		      COUNT(*)
+		  FROM
+		      EVENT
+		 WHERE
+		      STATUS = 'Y'
+	</select>
 	
 	
-	
-	
+	<select id="allEvents" resultMap="eventResultSet">
+		SELECT
+		      E.EVENT_NO,
+		      EVENT_TITLE,
+		      EVENT_CONTENT,
+		      CREATE_DATE,
+		      USER_NO,
+		      COUNT,
+		      CHANGE_NAME
+		  FROM
+		      EVENT E
+		  LEFT
+		  JOIN
+		      EVENT_IMG EI ON (E.EVENT_NO = EI.EVENT_NO AND FILE_LEVEL = 1)
+		 WHERE
+		      STATUS = 'Y'
+		 ORDER
+		    BY
+		      E.EVENT_NO DESC
+	</select>
 	
 	
 	

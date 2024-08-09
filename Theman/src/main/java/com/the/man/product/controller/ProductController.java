@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.the.man.common.model.vo.PageInfo;
+import com.the.man.common.template.Pagination;
 import com.the.man.product.model.service.ProductService;
 import com.the.man.product.model.vo.Product;
 import com.the.man.product.model.vo.ProductPhoto;
@@ -27,7 +29,7 @@ import lombok.RequiredArgsConstructor;
 public class ProductController {
 	
 	
-	private ProductService productService;
+	private final ProductService productService;
 	
 	@GetMapping("padding")
 	public String padding() {
@@ -64,10 +66,14 @@ public class ProductController {
 					     @RequestParam("upfiles2") MultipartFile[] upfiles2,
 					     HttpSession session, Model model) {
 		
+		System.out.println("제품명 : " + product.getProductName());
+		
 		productService.insert(product);
 		//int eventNo = event.getEventNo();
 		
 		int productNo = product.getProductNo();
+		System.out.println("제품번호 : " + productNo);
+
 		
 		if(productNo > 0) {
 			List<MultipartFile> allFiles = new ArrayList<MultipartFile>();
@@ -104,14 +110,21 @@ public class ProductController {
 				productService.insertImg(productPhoto);
 			}
 			session.setAttribute("alertMsg", "성공");
-			return "redirect:/event";
+			return "redirect:/";
 		} else {
 			model.addAttribute("errorMsg", "실패");
 			return "common/errorPage";
 		}
 	}
 	
-	
+	@GetMapping
+	public String allEvents(@RequestParam(value="page", defaultValue="1") int page, Model model) {
+		PageInfo pi = Pagination.getPageInfo(productService.selectListCount(), page, 6, 5);
+		model.addAttribute("event", productService.allEvents(pi));
+		model.addAttribute("pageInfo", pi);
+		
+		return "event/eventList";
+	}
 	
 	
 
