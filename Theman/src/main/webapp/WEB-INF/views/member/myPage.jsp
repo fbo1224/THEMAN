@@ -159,7 +159,6 @@
 	
 	
 	            <div id="ct2_4">
-	                <button type="button" id="update" onclick="location.href='${path}/update.ck'">정보수정</button>
 	                <button type="button" data-toggle="modal" data-target="#deleteForm">회원탈퇴</button>
 	            </div>
 	        </div>
