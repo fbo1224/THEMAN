@@ -194,7 +194,7 @@
 		                <!-- 로그인 전 -->
 		                <div class="header_menubar">
 			                <a id="kakao-login">카카오 로그인</a>
-			                <a href="${path}/list.notice">고객센터</a>
+			                <a href="${path}/qnaPage">QnA</a>
 		                </div>
 	                </c:when>
 				    <c:otherwise>
@@ -216,7 +216,7 @@
 					        </c:choose>
 					        
 		         	
-					        <a href="${path}/list.notice">고객센터</a>
+					        <a href="${path}/qnaPage">QnA</a>
 					        <a href="${path}/logout" style="color:orangered;">로그아웃</a>
 				        	
 						</div>
