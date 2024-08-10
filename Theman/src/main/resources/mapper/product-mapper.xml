@@ -87,6 +87,7 @@
 	</select>
 	
 	
+
 	<select id="allProduct" resultMap="productResultSet">
 		SELECT
 		      P.PRODUCT_NO,
@@ -105,6 +106,7 @@
 		    BY
 		      P.PRODUCT_NO DESC
 	</select>
+
 	
 	
 	
