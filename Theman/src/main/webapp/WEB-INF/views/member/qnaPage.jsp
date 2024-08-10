@@ -21,14 +21,13 @@
     }
     
     #title>b {
-        font-size: 20px;
+        font-size: 30px;
     }
     
     #content {
         margin: auto;
         width: 1000px;
         text-align: center;
-        color: rgb(184, 178, 178);
         padding: 20px;
         border-radius: 10px;
     }
