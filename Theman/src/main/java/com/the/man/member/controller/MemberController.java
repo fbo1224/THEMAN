@@ -107,5 +107,11 @@ public class MemberController {
 		
 	}
 	
+	// QnA페이지로 이동
+	@GetMapping("qnaPage")
+	public String qnaPage() {
+		return "member/qnaPage";
+	}
+	
 	
 }
