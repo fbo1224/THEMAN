@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,6 +26,7 @@ import com.the.man.product.model.vo.ProductPhoto;
 import lombok.RequiredArgsConstructor;
 
 @Controller
+//@RequestMapping("product")
 @RequiredArgsConstructor
 public class ProductController {
 	
@@ -118,12 +120,16 @@ public class ProductController {
 	}
 	
 	@GetMapping
-	public String allEvents(@RequestParam(value="page", defaultValue="1") int page, Model model) {
+	public String allProduct(@RequestParam(value="page", defaultValue="1") int page, Model model) {
 		PageInfo pi = Pagination.getPageInfo(productService.selectListCount(), page, 6, 5);
-		model.addAttribute("event", productService.allEvents(pi));
+		model.addAttribute("product", productService.allProduct(pi));
 		model.addAttribute("pageInfo", pi);
 		
-		return "event/eventList";
+		List<Product> product = productService.allProduct(pi);
+		
+		System.out.println("test : " + product.get(0).getProductName());
+		
+		return "product/padding";
 	}
 	
 	

@@ -12,6 +12,7 @@
 		<result column="PRODUCT_PRICE" property="productPrice"/>
 		<result column="PRODUCT_STATUS" property="ProductStatus"/>
 		<result column="CATEGORY_NO" property="categoryNo"/>
+		<result column="COUNT" property="count"/>
 		
 		
 		<result column="COUNT" property="count"/>
@@ -20,7 +21,7 @@
 		<result column="CHANGE_NAME" property="changeName"/>
 	</resultMap>
 	
-	<resultMap type="ProductPhoto" id="ProductPhotoResultSet">
+	<resultMap type="ProductPhoto" id="productPhotoResultSet">
 		<result column="PRODUCT_PHOTO_NO" property="productPhotoNo"/>
 		<result column="PRODUCT_NO" property="productNo"/>
 		<result column="ORIGIN_NAME" property="originName"/>
@@ -82,31 +83,27 @@
 		SELECT
 		      COUNT(*)
 		  FROM
-		      EVENT
-		 WHERE
-		      STATUS = 'Y'
+		      TB_PRODUCT
 	</select>
 	
 	
-	<select id="allEvents" resultMap="eventResultSet">
+	<select id="allProduct" resultMap="productResultSet">
 		SELECT
-		      E.EVENT_NO,
-		      EVENT_TITLE,
-		      EVENT_CONTENT,
+		      P.PRODUCT_NO,
+		      PRODUCT_NAME,
+		      PRODUCT_CONTENT,
 		      CREATE_DATE,
 		      USER_NO,
 		      COUNT,
 		      CHANGE_NAME
 		  FROM
-		      EVENT E
+		      TB_PRODUCT P
 		  LEFT
 		  JOIN
-		      EVENT_IMG EI ON (E.EVENT_NO = EI.EVENT_NO AND FILE_LEVEL = 1)
-		 WHERE
-		      STATUS = 'Y'
+		      TB_PRODUCT_PHOTO PP ON (P.PRODUCT_NO = PP.PRODUCT_NO AND FILE_LEVEL = 1)
 		 ORDER
 		    BY
-		      E.EVENT_NO DESC
+		      P.PRODUCT_NO DESC
 	</select>
 	
 	

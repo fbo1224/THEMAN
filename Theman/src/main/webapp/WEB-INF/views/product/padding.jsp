@@ -7,22 +7,158 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+	/* 컨텐트 */
+	#container{
+	    width: 1200px;
+	    margin: 0 auto;
+	}
+	
+	.event_title{
+	    width: 1200px;
+	    text-align: center;
+	    margin-bottom: 40px;
+	}
+
+	.event_title_a{
+	    font-size: 35px;
+	    font-weight: bold;
+	    color: #272727;
+	}
+	
+	.event_title_a:hover{
+	    color: #FF9843;
+	    text-decoration: none;
+	}
+	
+	/* 글쓰기 버튼 */
+    .cs_board_top{
+        width: 1140px;
+        height: 52px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .cs_board_top_btn{
+        width: 100px;
+        float: right;
+    }
+
+    .cs_btn{
+        width: 80px;
+        height: 45px;
+        border: none;
+        background-color: #FF9843;
+        border-radius: 20px;
+        margin-left: 10px;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+	
+
+	.list-area{
+		text-align: center;
+	}
+
+	.event{
+	    border: 1px solid #e1e1e1;
+	    border-radius: 20px;
+	    width: 340px;
+	    padding: 12px;
+	    margin: 25px;
+	    display: inline-block;
+	}
+	
+	.event > img{
+	    width: 280px;
+	    height: 280px;
+	    margin-top: 10px;
+	    margin-bottom: 25px;
+	    border-radius: 20px;
+	}
+	
+	.event:hover{
+		cursor: pointer;
+	    opacity: 0.9;
+	}
+	
+	.eventTitle{
+	    width: 100px;
+	    font-size: 17px;
+	    font-weight: bold;
+	    color: #272727;
+	}
+	
+	.eventTitle:hover{
+		text-decoration: none;
+		color: #FF9843;
+	}
+	
+	/* 페이징바 */
+    .hdmy-board_page{
+    	width: 1200px;
+    }
+    
+     .pagination {
+     	width:fit-content;
+     	margin: 0 auto;
+     	margin-top: 40px;
+     	margin-bottom: 40px;
+     }
+     
+     .page-item.active .page-link {
+     	background-color: #FF9843 !important;
+     	border: 1px solid #FF9843 !important;
+     	color: #FFFFFF !important;
+     	font-weight: bold;
+     	border-radius: 10px;
+     }
+     
+     .page-link {
+     	color: #292929 !important;
+     	font-weight: bold;
+     	border-radius: 10px;
+     	margin-right: 10px;
+     }
+     
+     .page-item:last-child .page-link, .page-item:first-child .page-link {
+     	border-radius: 10px !important;
+     }
 <body>
 
 	<jsp:include page ="../common/header.jsp" />
-	
-	<div>
-	
-	</div>
-	
-    <div id="bottom-content" style="width : 100%; height : 600px; margin:auto;">
+    
+    <div id="container">
+        <div class="event_title"><a class="event_title_a" href="review">축제/이벤트</a></div>
 
-        <h2 style="font-size:38px; font-weight: 800; margin-top:50px; margin-bottom:60px;" align="center">현재 인기있는 차종~</h2>
-
-        <div class="container">
-            <div id="cacaca" class="row">
-            
-            </div>
+        <div class="list-area">
+        	<c:forEach var="p" items="${product}">
+	            <div class="event" align="center">
+	                <input type="hidden" value="${p.productNo}" />
+	                <img src="${p.changeName}" class="eventImg" />
+	                <p>
+	                <a class="eventTitle">${p.productName}</a> <br><br>
+	                <label>조회수</label> : <span>${p.count}</span>
+	                </p>
+	            </div>
+        	</c:forEach>
+        </div>
+        
+		<div class="hdmy-board_page" id="pagination">
+			<ul class="pagination">
+		        <c:forEach begin="${pageInfo.startPage}" end="${pageInfo.endPage}" var="p">
+		            <c:choose>
+		                <c:when test="${p eq pageInfo.currentPage}">
+		                    <li class="page-item active"><a class="page-link" href="product?page=${p}">${p}</a></li>
+		                </c:when>
+		                <c:otherwise>
+		                    <li class="page-item"><a class="page-link" href="product?page=${p}">${p}</a></li>
+		                </c:otherwise>
+		            </c:choose>
+		        </c:forEach>
+			</ul>
         </div>
     </div>
 
