@@ -88,26 +88,7 @@
 	</select>
 	
 	
-	<select id="allEvents" resultMap="eventResultSet">
-		SELECT
-		      E.EVENT_NO,
-		      EVENT_TITLE,
-		      EVENT_CONTENT,
-		      CREATE_DATE,
-		      USER_NO,
-		      COUNT,
-		      CHANGE_NAME
-		  FROM
-		      EVENT E
-		  LEFT
-		  JOIN
-		      EVENT_IMG EI ON (E.EVENT_NO = EI.EVENT_NO AND FILE_LEVEL = 1)
-		 WHERE
-		      STATUS = 'Y'
-		 ORDER
-		    BY
-		      E.EVENT_NO DESC
-	</select>
+
 	
 	
 	
