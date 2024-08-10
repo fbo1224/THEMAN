@@ -26,18 +26,18 @@ import com.the.man.product.model.vo.ProductPhoto;
 import lombok.RequiredArgsConstructor;
 
 @Controller
-//@RequestMapping("product")
+@RequestMapping("product")
 @RequiredArgsConstructor
 public class ProductController {
 	
 	
 	private final ProductService productService;
 	
-	@GetMapping("padding")
-	public String padding() {
-		return "product/padding";
-	}
-	
+//	@GetMapping("padding")
+//	public String padding() {
+//		return "product/padding";
+//	}
+//	
 	@GetMapping("productUproad")
 	public String productUproad() {
 		return "product/productUproad";
@@ -119,15 +119,11 @@ public class ProductController {
 		}
 	}
 	
-	@GetMapping
+	@GetMapping("/padding")
 	public String allProduct(@RequestParam(value="page", defaultValue="1") int page, Model model) {
 		PageInfo pi = Pagination.getPageInfo(productService.selectListCount(), page, 6, 5);
 		model.addAttribute("product", productService.allProduct(pi));
 		model.addAttribute("pageInfo", pi);
-		
-		List<Product> product = productService.allProduct(pi);
-		
-		System.out.println("test : " + product.get(0).getProductName());
 		
 		return "product/padding";
 	}

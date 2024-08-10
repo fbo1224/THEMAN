@@ -10,10 +10,8 @@
 		<result column="PRODUCT_CONTENT" property="productContent"/>
 		<result column="CREATE_DATE" property="createDate"/>
 		<result column="PRODUCT_PRICE" property="productPrice"/>
-		<result column="PRODUCT_STATUS" property="ProductStatus"/>
+		<result column="PRODUCT_STATUS" property="productStatus"/>
 		<result column="CATEGORY_NO" property="categoryNo"/>
-		<result column="COUNT" property="count"/>
-		
 		
 		<result column="COUNT" property="count"/>
 		<result column="USER_NO" property="userNo"/>

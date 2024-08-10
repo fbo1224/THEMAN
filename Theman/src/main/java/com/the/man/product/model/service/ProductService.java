@@ -14,6 +14,7 @@ public interface ProductService {
 	
 	int selectListCount();
 	
+	
 	List<Product> allProduct(PageInfo pi);
 
 

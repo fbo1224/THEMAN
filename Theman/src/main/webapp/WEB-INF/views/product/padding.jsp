@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
 <style>
 	/* 컨텐트 */
 	#container{
@@ -126,6 +125,10 @@
      .page-item:last-child .page-link, .page-item:first-child .page-link {
      	border-radius: 10px !important;
      }
+     
+	
+</style>
+</head>
 <body>
 
 	<jsp:include page ="../common/header.jsp" />
