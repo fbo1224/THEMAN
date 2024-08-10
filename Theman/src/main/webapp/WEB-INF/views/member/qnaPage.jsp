@@ -36,6 +36,17 @@
         margin-left: 10px;
         transition: transform 0.3s ease;
     }
+    
+    .q{
+	    font-weight: bold;
+        font-size: 20px;
+        margin-top: 20px;
+        background-image: url('resources/images/common/more.png');
+    }
+    
+    .rotate {
+        transform: rotate(180deg);
+    }
 
 </style>
 
@@ -50,7 +61,7 @@
 		
 			<div id="content">
 	            <div id="title"><b>자주 찾는 질문</b></div>
-	            <div class="q">Q. [회원] 비회원으로 이용할 수 없나요?<i class="fas fa-chevron-down"></i></div>
+	            <div class="q">Q. [회원] 비회원으로 이용할 수 없나요?<i class="fas fa-chevron-down" ></i></div>
 	            <p class="a">A. 회원만 이용가능하기 때문에 양해부탁드립니다.</p>
 	            <div class="line"></div>
 	            <div class="q">Q. [회원] 회원탈퇴는 어디서 할 수 있나요?<i class="fas fa-chevron-down"></i></div>
