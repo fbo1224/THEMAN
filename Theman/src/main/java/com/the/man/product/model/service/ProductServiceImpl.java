@@ -32,8 +32,6 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public int selectListCount() {
 		// TODO Auto-generated method stub
-		System.out.println("dd");
-
 		return productMapper.selectListCount();
 	}
 

@@ -141,7 +141,7 @@
 	</script>
 		
 		
-	<span><a href="${path}/product/productUproad">제품등록</a></span>
+	<span><a href="${path}/productUproad">제품등록</a></span>
 		
 		
 		

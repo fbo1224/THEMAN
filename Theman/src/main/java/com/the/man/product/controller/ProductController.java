@@ -26,7 +26,7 @@ import com.the.man.product.model.vo.ProductPhoto;
 import lombok.RequiredArgsConstructor;
 
 @Controller
-@RequestMapping("product")
+//@RequestMapping("product")
 @RequiredArgsConstructor
 public class ProductController {
 	
@@ -38,7 +38,7 @@ public class ProductController {
 //		return "product/padding";
 //	}
 //	
-	@GetMapping("productUproad")
+	@GetMapping("/productUproad")
 	public String productUproad() {
 		return "product/productUproad";
 	}
