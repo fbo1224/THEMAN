@@ -139,7 +139,7 @@ public class ProductController {
 		PageInfo pi = Pagination.getPageInfo(productService.selectListCount(categoryNo), page, 6, 5);
 		model.addAttribute("product", productService.allProduct(pi,categoryNo));
 		model.addAttribute("pageInfo", pi);
-//		
+		model.addAttribute("categoryNo", categoryNo);
 //		HashMap<String, Object> aa = new HashMap();
 //		
 //		aa.put("pi", pi);

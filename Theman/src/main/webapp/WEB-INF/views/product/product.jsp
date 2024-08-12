@@ -134,7 +134,7 @@
 	<jsp:include page ="../common/header.jsp" />
     
     <div id="container">
-        <div class="event_title"><a class="event_title_a" href="review">축제/이벤트</a></div>
+        <div class="event_title"><a class="event_title_a" href="review">THE MAN</a></div>
 
         <div class="list-area">
         	<c:forEach var="p" items="${product}">
@@ -157,7 +157,7 @@
 		                    <li class="page-item active"><a class="page-link" href="product?page=${p}">${p}</a></li>
 		                </c:when>
 		                <c:otherwise>
-		                    <li class="page-item"><a class="page-link" href="product?page=${p}">${p}</a></li>
+		                    <li class="page-item"><a class="page-link" href="product?categoryNo=${ categoryNo }&page=${p}">${p}</a></li>
 		                </c:otherwise>
 		            </c:choose>
 		        </c:forEach>
