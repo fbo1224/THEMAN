@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	div{box-shadow: 0 0 0 1px red;}
+	/*div{box-shadow: 0 0 0 1px red;}*/
 	
 	#wrap{
 		width:1200px;
@@ -27,6 +27,7 @@
 		width:50%;
 		height:100%;
 		float:left;
+		border:1px solid lightgray;
 	}
 	
 	.img{
@@ -47,8 +48,12 @@
 	}
 	
 	#bottom{
+		width:100%;
 		height:200px;
 		text-align:center;
+	}
+	#bottomBtn{
+		margin-top:100px;
 	}
 	
 </style>
@@ -106,7 +111,7 @@
 		</div>
 		
 		<div id="bottom">
-			<button id="bottomBtn">목록으로</button>
+			<button id="bottomBtn" class="btn btn-outline-primary" onclick="location.href='main.jsp'">목록으로</button>
 		</div>
 		
 		
