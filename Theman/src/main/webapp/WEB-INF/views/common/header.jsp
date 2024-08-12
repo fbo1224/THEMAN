@@ -264,7 +264,7 @@
                             <li><a href="${path}/aqua">슬리퍼</a></li>
                         </ul>
                     </li>
-                    <li><a href="${path}/event">EVENT</a>
+                    <li><a href="${path}/eventList">EVENT</a>
                     </li>
                 </ul>
             </div>

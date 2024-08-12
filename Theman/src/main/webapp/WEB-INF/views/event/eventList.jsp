@@ -10,28 +10,57 @@
 	
 	#wrap{
 		width:1200px;
-		height:auto;
+		height:2000px;
 		margin:auto;
 	}
 	
 	#content{
 		width:1200px;
-		
+		height:auto;
+	}
+	
+	.eventList{
+		width:100%;
+		height:400px;
+	}
+	.event{
+		width:50%;
+		ehigth:300px;
+		float:left;
 	}
 </style>
 </head>
 <body>
 
+	<jsp:include page="../common/header.jsp" />
+
 	<div id="wrap">
 		<div id="content">
+		
+		<div class="eventList">
+			<div class="event">
+			
+			</div>
+			<div class="event">
+			
+			</div>
+		</div>
+		
+		<div class="eventList">
+			<div class="event">
+			
+			</div>
+			<div class="event">
+			
+			</div>
+		</div>
 		
 		
 		
 		
 		</div>
-	
-	
 	</div>
+	
 
 
 
