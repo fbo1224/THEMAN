@@ -3,6 +3,7 @@ package com.the.man.product.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,13 +14,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.the.man.common.model.vo.PageInfo;
 import com.the.man.common.template.Pagination;
 import com.the.man.product.model.service.ProductService;
+import com.the.man.product.model.vo.Category;
 import com.the.man.product.model.vo.Product;
 import com.the.man.product.model.vo.ProductPhoto;
 
@@ -39,8 +41,20 @@ public class ProductController {
 //	}
 //	
 	@GetMapping("/productUproad")
-	public String productUproad() {
-		return "product/productUproad";
+	public ModelAndView productUproad(ModelAndView mv) {
+		
+		
+		List<Category> categoryList = new ArrayList<Category>();
+		
+		categoryList = productService.allCategory();
+		
+		for(int i=0; i <= categoryList.size(); i++) {
+			mv.addObject("categoryList", categoryList)
+			.setViewName("product/productUproad");
+		}
+		
+		
+		return mv;
 	}
 	
 	public String saveFile(MultipartFile upfile, HttpSession session) {
@@ -69,6 +83,7 @@ public class ProductController {
 					     HttpSession session, Model model) {
 		
 		System.out.println("제품명 : " + product.getProductName());
+		System.out.println("카테고리번호 : " + product.getCategoryNo());
 		
 		productService.insert(product);
 		//int eventNo = event.getEventNo();
@@ -119,13 +134,22 @@ public class ProductController {
 		}
 	}
 	
-	@GetMapping("/padding")
-	public String allProduct(@RequestParam(value="page", defaultValue="1") int page, Model model) {
-		PageInfo pi = Pagination.getPageInfo(productService.selectListCount(), page, 6, 5);
-		model.addAttribute("product", productService.allProduct(pi));
+	@GetMapping("/product")
+	public String allProduct(@RequestParam(value="page", defaultValue="1") int page, int categoryNo, Model model) {
+		PageInfo pi = Pagination.getPageInfo(productService.selectListCount(categoryNo), page, 6, 5);
+		model.addAttribute("product", productService.allProduct(pi,categoryNo));
 		model.addAttribute("pageInfo", pi);
+		model.addAttribute("categoryNo", categoryNo);
+//		HashMap<String, Object> aa = new HashMap();
+//		
+//		aa.put("pi", pi);
+//		aa.put("categoryNo", categoryNo);
+//		
+//		System.out.println(aa);
 		
-		return "product/padding";
+		System.out.println("카테고리번호 : " + categoryNo);
+		
+		return "product/product";
 	}
 	
 	

@@ -10,6 +10,9 @@
 </head>
 <body>
 
+	<jsp:include page ="../common/header.jsp" />
+
+
 <c:choose>
 	<c:when test="${empty loginUser}">
 		<script>
@@ -22,7 +25,6 @@
 		<div class="insert_box">
 		            <form action="${path}/insert" method="post" id="myform" enctype="multipart/form-data">
 		            	<input type="hidden" name="userNo" value="${ sessionScope.loginUser.userNo }"/>
-		            	<input type="hidden" name="categoryNo" value="1"/>
 						<table class="tb_input">
 							<tbody>
 		                        <tr>
@@ -39,6 +41,16 @@
 									<td><input type="number" class="content_inp" name="productPrice" required></input>
 		                            </td>
 								</tr>
+								<tr>
+									<th>* 카테고리 </th>
+									<td id="aaa">
+									<select onchange="category(this.value);" name="categoryNo" id="cmpaCnt">
+										<c:forEach var="L" items="${ categoryList }">
+										<option value="${L.categoryNo }">${ L.categoryName }</option>
+										</c:forEach>
+									</select>
+									</td>
+								</tr>
 		                        <tr>
 									<th>* 첨부파일</th>
 									<td>
@@ -54,7 +66,7 @@
 							</tbody>
 						</table>
 		                <div class="detail_btn_box" align="center">
-		                    <button class="hdmy_detail_btn" type="submit">등록</button>
+		                    <button class="hdmy_detail_btn" type="submit" id="btn">등록</button>
 		                    <button class="hdmy_detail_btn" type="button" onclick="backPage();">취소</button>
 		                </div>
 		            </form>
