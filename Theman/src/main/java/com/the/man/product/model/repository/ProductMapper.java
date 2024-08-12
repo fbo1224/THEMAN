@@ -3,8 +3,9 @@ package com.the.man.product.model.repository;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.session.RowBounds;
 
-import com.the.man.common.model.vo.PageInfo;
+import com.the.man.product.model.vo.Category;
 import com.the.man.product.model.vo.Product;
 import com.the.man.product.model.vo.ProductPhoto;
 
@@ -15,8 +16,10 @@ public interface ProductMapper {
 
 	int insertImg(ProductPhoto productPhoto);
 	
-	int selectListCount();
+	int selectListCount(int categoryNo);
 	
-	List<Product> allProduct(PageInfo pi);
+	List<Product> allProduct(int categoryNo, RowBounds rowBounds);
+	
+	List<Category> allCategory();
 
 }

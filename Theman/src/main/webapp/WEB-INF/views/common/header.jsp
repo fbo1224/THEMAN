@@ -236,32 +236,30 @@
                     
                     <li><a href="${path}/companion">OUTER</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
-                            <li><a href="${path}/padding">패딩</a></li>
-                            <li><a href="${path}/hanlasan">코트</a></li>
-                            <li><a href="${path}/aqua">가디건</a></li>
+                            <li><a href="${path}/product?categoryNo=1">패딩</a></li>
+                            <li><a href="${path}/product?categoryNo=2">코트</a></li>
+                            <li><a href="${path}/product?categoryNo=3">가디건</a></li>
                         </ul>
                     </li>
                     <li><a href="#">TOP</a>
                         <ul class="submenu"  style="padding-top: 20px;">
-                            <li><a href="${path}/tangerine">맨투맨</a></li>
-                            <li><a href="${path}/hanlasan">반팔티</a></li>
-                            <li><a href="${path}/aqua">긴팔티</a></li>
-                            <li><a href="${path}/aqua">셔츠</a></li>
+                            <li><a href="${path}/product?categoryNo=4">맨투맨</a></li>
+                            <li><a href="${path}/product?categoryNo=5">반팔티</a></li>
+                            <li><a href="${path}/product?categoryNo=6">셔츠</a></li>
                         </ul>
                     </li>
                     <li><a href="${path}/review">PANTS</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
-                            <li><a href="${path}/tangerine">청바지</a></li>
-                            <li><a href="${path}/hanlasan">면바지</a></li>
-                            <li><a href="${path}/aqua">슬랙스</a></li>
-                            <li><a href="${path}/aqua">반바지</a></li>
+                            <li><a href="${path}/product?categoryNo=7">청바지</a></li>
+                            <li><a href="${path}/product?categoryNo=8">슬랙스</a></li>
+                            <li><a href="${path}/product?categoryNo=9">반바지</a></li>
                         </ul>
                     </li>
                      <li><a href="${path}/review">SHOES</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
-                            <li><a href="${path}/tangerine">운동화</a></li>
-                            <li><a href="${path}/hanlasan">구두</a></li>
-                            <li><a href="${path}/aqua">슬리퍼</a></li>
+                            <li><a href="${path}/product?categoryNo=10">운동화</a></li>
+                            <li><a href="${path}/product?categoryNo=11">구두</a></li>
+                            <li><a href="${path}/product?categoryNo=12">슬리퍼</a></li>
                         </ul>
                     </li>
                     <li><a href="${path}/event">EVENT</a>

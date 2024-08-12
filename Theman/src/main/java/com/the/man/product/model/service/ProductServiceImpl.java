@@ -2,10 +2,12 @@ package com.the.man.product.model.service;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 
 import com.the.man.common.model.vo.PageInfo;
 import com.the.man.product.model.repository.ProductMapper;
+import com.the.man.product.model.vo.Category;
 import com.the.man.product.model.vo.Product;
 import com.the.man.product.model.vo.ProductPhoto;
 
@@ -30,15 +32,25 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public int selectListCount() {
+	public int selectListCount(int categoryNo) {
 		// TODO Auto-generated method stub
-		return productMapper.selectListCount();
+		return productMapper.selectListCount(categoryNo);
 	}
 
 	@Override
-	public List<Product> allProduct(PageInfo pi) {
+	public List<Product> allProduct(PageInfo pi, int categoryNo) {
+		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+		
+		
 		// TODO Auto-generated method stub
-		return productMapper.allProduct(pi);
+		return productMapper.allProduct(categoryNo,rowBounds);
+	}
+
+	@Override
+	public List<Category> allCategory() {
+		// TODO Auto-generated method stub
+		return productMapper.allCategory();
 	}
 
 }
