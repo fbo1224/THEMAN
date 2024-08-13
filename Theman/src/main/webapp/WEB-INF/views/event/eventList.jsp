@@ -75,6 +75,7 @@
 				
 				<p class="eventContent">이벤트내용	이벤트내용	이벤트내용	이벤트내용	이벤트내용	이벤트내용	이벤트내용	이벤트내용	이벤트내용	이벤트내용	이벤트내용	</p>
 			</div>
+			
 			<div class="event">
 				<img src="resources/images/event/event_2.png" alt="이벤트사진" class="img">
 				
