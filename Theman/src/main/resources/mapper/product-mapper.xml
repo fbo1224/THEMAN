@@ -125,8 +125,47 @@
 			TB_CATEGORY
 	</select>
 	
-
+	<select id="selectProduct" parameterType="_int" resultMap="productResultSet">
+		SELECT
+			P.PRODUCT_NO,
+			PRODUCT_NAME,
+			PRODUCT_CONTENT,
+			COUNT,
+			CHANGE_NAME
+		FROM
+			TB_PRODUCT P
+		LEFT
+		JOIN
+			TB_PRODUCT_PHOTO PP ON(P.PRODUCT_NO = PP.PRODUCT_NO AND FILE_LEVEL = 2)
+		WHERE
+			P.PRODUCT_NO = #{productNo}
+		ORDER
+			BY
+			P.PRODUCT_NO DESC
+	</select>
 	
+	<select id="selectProductPhotos" parameterType="_int" resultMap="productPhotoResultSet">
+		SELECT
+			PRODUCT_NAME,
+			ORIGIN_NAME,
+			CHANGE_NAME
+		FROM
+			TB_PRODUCT_PHOTO
+		JOIN
+			TB_PRODUCT USING(PRODUCT_NO)
+		WHERE
+			PRODUCT_NO= #{productNo}
+		
+	</select>
+	
+	<update id="increaseCount" parameterType="_int">
+		UPDATE
+			  TB_PRODUCT
+		   SET
+		   	  COUNT = COUNT + 1
+		 WHERE
+		 	  PRODUCT_NO = #{productNo}
+	</update>
 	
 	
 </mapper>

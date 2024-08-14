@@ -53,4 +53,22 @@ public class ProductServiceImpl implements ProductService{
 		return productMapper.allCategory();
 	}
 
+	@Override
+	public Product selectProduct(int productNo) {
+		// TODO Auto-generated method stub
+		return productMapper.selectProduct(productNo);
+	}
+
+	@Override
+	public List<ProductPhoto> selectProductPhotos(int productNo) {
+		// TODO Auto-generated method stub
+		return productMapper.selectProductPhotos(productNo);
+	}
+
+	@Override
+	public int increaseCount(int productNo) {
+		// TODO Auto-generated method stub
+		return productMapper.increaseCount(productNo);
+	}
+
 }

@@ -234,7 +234,7 @@
             <div class="header_menu">
                 <ul class="navi">
                     
-                    <li><a href="${path}/companion">OUTER</a>
+                    <li><a href="#">OUTER</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/product?categoryNo=1">패딩</a></li>
                             <li><a href="${path}/product?categoryNo=2">코트</a></li>
@@ -248,14 +248,14 @@
                             <li><a href="${path}/product?categoryNo=6">셔츠</a></li>
                         </ul>
                     </li>
-                    <li><a href="${path}/review">PANTS</a>
+                    <li><a href="#">PANTS</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/product?categoryNo=7">청바지</a></li>
                             <li><a href="${path}/product?categoryNo=8">슬랙스</a></li>
                             <li><a href="${path}/product?categoryNo=9">반바지</a></li>
                         </ul>
                     </li>
-                     <li><a href="${path}/review">SHOES</a>
+                     <li><a href="#">SHOES</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/product?categoryNo=10">운동화</a></li>
                             <li><a href="${path}/product?categoryNo=11">구두</a></li>

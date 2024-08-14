@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -151,6 +152,28 @@ public class ProductController {
 		
 		return "product/product";
 	}
+	
+	// detail
+	
+	@GetMapping("/product/{productNo}")
+	public ModelAndView detailProduct(@PathVariable int productNo, ModelAndView mv) {
+		
+		Product product = productService.selectProduct(productNo);
+		if(product != null) {
+			List<ProductPhoto> productPhotos = productService.selectProductPhotos(productNo);
+			product.setProductPhotos(productPhotos);
+			
+			if(productService.increaseCount(productNo) > 0) {
+				mv.addObject("product", product).setViewName("product/productDetail");
+			} else {
+				mv.addObject("errorMsg", "조회 실패").setViewName("common/errorPage");
+			}
+		} else {
+			mv.addObject("errorMsg", "찾을 수 없음").setViewName("common/errorPage");
+		}
+		return mv;
+	}
+	
 	
 	
 

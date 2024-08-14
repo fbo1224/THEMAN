@@ -20,5 +20,10 @@ public interface ProductService {
 	
 	List<Category> allCategory();
 
-
+	Product selectProduct(int productNo);
+	
+	List<ProductPhoto> selectProductPhotos(int productNo);
+	
+	int increaseCount(int productNo);
+	
 }

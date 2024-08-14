@@ -21,5 +21,11 @@ public interface ProductMapper {
 	List<Product> allProduct(int categoryNo, RowBounds rowBounds);
 	
 	List<Category> allCategory();
+	
+	Product selectProduct(int productNo);
+	
+	List<ProductPhoto> selectProductPhotos(int productNo);
+	
+	int increaseCount(int productNo);
 
 }

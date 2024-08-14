@@ -13,19 +13,19 @@
 	    margin: 0 auto;
 	}
 	
-	.event_title{
+	.product_title{
 	    width: 1200px;
 	    text-align: center;
 	    margin-bottom: 40px;
 	}
 
-	.event_title_a{
+	.product_title_a{
 	    font-size: 35px;
 	    font-weight: bold;
 	    color: #272727;
 	}
 	
-	.event_title_a:hover{
+	.product_title_a:hover{
 	    color: #FF9843;
 	    text-decoration: none;
 	}
@@ -61,7 +61,7 @@
 		text-align: center;
 	}
 
-	.event{
+	.product{
 	    border: 1px solid #e1e1e1;
 	    border-radius: 20px;
 	    width: 340px;
@@ -70,7 +70,7 @@
 	    display: inline-block;
 	}
 	
-	.event > img{
+	.product > img{
 	    width: 280px;
 	    height: 280px;
 	    margin-top: 10px;
@@ -78,19 +78,19 @@
 	    border-radius: 20px;
 	}
 	
-	.event:hover{
+	.product:hover{
 		cursor: pointer;
 	    opacity: 0.9;
 	}
 	
-	.eventTitle{
+	.productTitle{
 	    width: 100px;
 	    font-size: 17px;
 	    font-weight: bold;
 	    color: #272727;
 	}
 	
-	.eventTitle:hover{
+	.productTitle:hover{
 		text-decoration: none;
 		color: #FF9843;
 	}
@@ -134,15 +134,15 @@
 	<jsp:include page ="../common/header.jsp" />
     
     <div id="container">
-        <div class="event_title"><a class="event_title_a" href="review">THE MAN</a></div>
+        <div class="product_title"><a class="product_title_a" href="review">THE MAN</a></div>
 
         <div class="list-area">
         	<c:forEach var="p" items="${product}">
-	            <div class="event" align="center">
+	            <div class="product" align="center">
 	                <input type="hidden" value="${p.productNo}" />
-	                <img src="${p.changeName}" class="eventImg" />
+	                <img src="${p.changeName}" class="productImg" />
 	                <p>
-	                <a class="eventTitle">${p.productName}</a> <br><br>
+	                <a class="productTitle">${p.productName}</a> <br><br>
 	                <label>조회수</label> : <span>${p.count}</span>
 	                </p>
 	            </div>
@@ -164,6 +164,16 @@
 			</ul>
         </div>
     </div>
+   
+    <script>
+    $(() => {
+	    $('.product').click(function() {
+	        const productNo = $(this).find('input[type="hidden"]').val();
+	        location.href = '${path}/product/' + productNo;
+	    });
+	});
+    
+    </script>
 
 	<jsp:include page="../common/footer.jsp" />
 	
