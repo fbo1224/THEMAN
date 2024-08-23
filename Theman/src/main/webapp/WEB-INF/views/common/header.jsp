@@ -234,28 +234,28 @@
             <div class="header_menu">
                 <ul class="navi">
                     
-                    <li><a href="#">OUTER</a>
+                    <li><a>OUTER</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/product?categoryNo=1">패딩</a></li>
                             <li><a href="${path}/product?categoryNo=2">코트</a></li>
                             <li><a href="${path}/product?categoryNo=3">가디건</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">TOP</a>
+                    <li><a>TOP</a>
                         <ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/product?categoryNo=4">맨투맨</a></li>
                             <li><a href="${path}/product?categoryNo=5">반팔티</a></li>
                             <li><a href="${path}/product?categoryNo=6">셔츠</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">PANTS</a>
+                    <li><a>PANTS</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/product?categoryNo=7">청바지</a></li>
                             <li><a href="${path}/product?categoryNo=8">슬랙스</a></li>
                             <li><a href="${path}/product?categoryNo=9">반바지</a></li>
                         </ul>
                     </li>
-                     <li><a href="#">SHOES</a>
+                     <li><a>SHOES</a>
                     	<ul class="submenu"  style="padding-top: 20px;">
                             <li><a href="${path}/product?categoryNo=10">운동화</a></li>
                             <li><a href="${path}/product?categoryNo=11">구두</a></li>

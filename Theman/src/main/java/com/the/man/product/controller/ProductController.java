@@ -163,6 +163,8 @@ public class ProductController {
 			List<ProductPhoto> productPhotos = productService.selectProductPhotos(productNo);
 			product.setProductPhotos(productPhotos);
 			
+			System.out.println("카테고리이름"+product.getCategoryName());
+			
 			if(productService.increaseCount(productNo) > 0) {
 				mv.addObject("product", product).setViewName("product/productDetail");
 			} else {

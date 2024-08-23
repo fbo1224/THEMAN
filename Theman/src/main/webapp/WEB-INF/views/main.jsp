@@ -35,6 +35,9 @@
             background-color: lightslategray;
             cursor: pointer;
         }
+    #size{
+    	height : 100px;
+    }
     
     
     </style>
@@ -43,20 +46,11 @@
 <jsp:include page ="common/header.jsp" />
 	
 	<div id="innerOuter">
-		<div id="ex">
-		    <div class="reservation">
-		   		<img onclick="location.href='${path}/hanlasan'" src="resources/image/han.jpg">
-		   		<label id="han">한라산</label>
-		    </div>
-		    <div class="reservation">
-		    	<img onclick="location.href='aqua'"src="resources/image/아쿠아리움.png">
-		    	<label id="aqua">아쿠아플라넷</label>
-		    </div>
-		    <div class="reservation">
-		   		<img onclick="location.href='tangerine'"src="resources/image/tangerine.jpg"/>
-		   		<label id="gul">감귤체험</label>
-		    </div>
-		 </div>
+		
+		<div id="size">
+		
+		</div>
+		
 		 
 		<div id="content_1">
         <!-- Slider main container -->

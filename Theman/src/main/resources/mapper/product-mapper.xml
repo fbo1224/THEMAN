@@ -12,6 +12,7 @@
 		<result column="PRODUCT_PRICE" property="productPrice"/>
 		<result column="PRODUCT_STATUS" property="productStatus"/>
 		<result column="CATEGORY_NO" property="categoryNo"/>
+		<result column="CATEGORY_NAME" property="categoryName"/>
 		
 		<result column="COUNT" property="count"/>
 		<result column="USER_NO" property="userNo"/>
@@ -131,12 +132,15 @@
 			PRODUCT_NAME,
 			PRODUCT_CONTENT,
 			COUNT,
-			CHANGE_NAME
+			CHANGE_NAME,
+			CATEGORY_NAME
 		FROM
 			TB_PRODUCT P
 		LEFT
 		JOIN
 			TB_PRODUCT_PHOTO PP ON(P.PRODUCT_NO = PP.PRODUCT_NO AND FILE_LEVEL = 2)
+		JOIN
+			TB_CATEGORY USING(CATEGORY_NO)
 		WHERE
 			P.PRODUCT_NO = #{productNo}
 		ORDER
@@ -148,11 +152,14 @@
 		SELECT
 			PRODUCT_NAME,
 			ORIGIN_NAME,
-			CHANGE_NAME
+			CHANGE_NAME,
+			CATEGORY_NAME
 		FROM
 			TB_PRODUCT_PHOTO
 		JOIN
 			TB_PRODUCT USING(PRODUCT_NO)
+		JOIN 
+			TB_CATEGORY USING(CATEGORY_NO)		
 		WHERE
 			PRODUCT_NO= #{productNo}
 		

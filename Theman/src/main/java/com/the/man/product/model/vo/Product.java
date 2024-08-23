@@ -25,6 +25,7 @@ public class Product {
 	private int productPrice;
 	private String productStatus;
 	private int categoryNo;
+	private String categoryName;
 	
 	private int count;
 	private int userNo;

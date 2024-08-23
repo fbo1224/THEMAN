@@ -16,6 +16,7 @@ public class ProductPhoto{
 	private String originName;
 	private String changeName;
 	private int fileLevel;
+	private String categoryName;
 	
 	
 }

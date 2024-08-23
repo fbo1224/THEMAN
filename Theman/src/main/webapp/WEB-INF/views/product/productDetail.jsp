@@ -148,10 +148,10 @@
 	<jsp:include page ="../common/header.jsp" />
 
 	<div id="container">
-        <div class="product_title"><a class="product_title_a" href="review">이벤트</a></div>
+        <div class="product_title"><a class="product_title_a">${product.categoryName }</a></div>
 
         <div class="detail_box"> <!-- 제목, 작성자 신청버튼 전부 감싸는 div -->
-            <div class="detail_title"><span>${product.productName}</span></div>
+            <!-- <div class="detail_title"><span>${product.productName}</span></div> -->
             <input type="hidden" value="${product.userNo}"/>
             <div class="detail_info">
                 <div class="detail_info1"><a>${product.createDate} &nbsp;&nbsp;| &nbsp;&nbsp;조회수 : ${product.count}</a></div>
