@@ -118,7 +118,6 @@
 	        let answer = $(this).next();
 	        answer.toggle();
 	        $(this).find('.fa-chevron-down').toggleClass('rotate');
-	        /*$(this).children('.plus').html('<img src="resources/images/common/magnifier.png">');*/
 	        
 	        if($(this).children('.plus').css('display') == 'none'){
 		    	$(this).children('.plus').css('display', 'block');
